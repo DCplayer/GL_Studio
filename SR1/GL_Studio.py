@@ -1,5 +1,6 @@
 import struct
 from random import randint as random
+import numpy as np
 
 
 def char(c):
@@ -19,8 +20,11 @@ def color(r, g, b):
 
 
 class GL_Studio:
-    def __init__(self):
-        pass
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+        self.pixels = np.zeros((height, width))
+        print(self.pixels)
 
     def gl_init(self):
         pass
@@ -43,9 +47,6 @@ class GL_Studio:
     def gl_color(self):
         pass
 
-    def gl_color(self):
-        pass
-
     def gl_finish(self):
         pass
 
@@ -54,4 +55,34 @@ class Bitmap(object):
     def __init__(self, width, height):
         self.width = width
         self.height = height
+        self.studio = GL_Studio()
 
+    def write(self, filename):
+        f = open(filename, 'bw')
+
+        f.write(char('B'))
+        f.write(char('M'))
+        f.write(dword(14 + 40 + self.width * self.height * 3))
+        f.write(dword(0))
+        f.write(dword(14 + 40))
+
+        f.write(dword(40))
+        f.write(dword(self.width))
+        f.write(dword(self.height))
+        f.write(word(1))
+        f.write(word(24))
+        f.write(dword(0))
+        f.write(dword(self.width * self.height * 3))
+        f.write(dword(0))
+        f.write(dword(0))
+        f.write(dword(0))
+        f.write(dword(0))
+
+        for i in range(self.height):
+            for j in range(self.width):
+                f.write(self.studio.pixels[i][j])
+
+        f.close()
+
+        def point(self, color, x, y):
+            self.studio.pixels[x][y] = color
