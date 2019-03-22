@@ -12,6 +12,9 @@ def bullet_one():
     gl_view_port(0, 0, 600, 800)
     thisy = random.uniform(-1, 1)
     thisx = random.uniform(-1, 1)
+    print(thisy)
+    print(thisx)
+
     realx = normalize(thisx, 600)
     realy = normalize(thisy, 800)
     gl_vertex(realx, realy)

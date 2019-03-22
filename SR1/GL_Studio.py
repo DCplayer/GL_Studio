@@ -72,14 +72,8 @@ def gl_clear_color(r, g, b):
 
 
 def gl_vertex(x, y):
-    real_x = normalize(x, width) + pos_x
-    real_y = normalize(y, height) + pos_y
-    print('Gl vertex width: ' + str(width))
-    print('Gl vertex height: ' + str(height))
-
-    print('Gl vertex pos_x: ' + str(pos_x))
-    print('Gl vertex pos_y: ' + str(pos_y))
-
+    real_x = x + pos_x
+    real_y = y + pos_y
     bitmap.point(real_x, real_y)
 
 
@@ -135,7 +129,7 @@ class Render(object):
     def point(self, x, y):
         print('X desde point en render es : ' + str(x) + ' y el maximo es de ' + str(self.width))
         print('Y desde point en render es : ' + str(y) + ' y el maximo es de ' + str(self.height))
-        self.pixel[x][y] = self.color
+        self.pixel[y][x] = self.color
 
     def clear(self):
         self.pixel = [
