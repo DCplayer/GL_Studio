@@ -25,6 +25,15 @@ width = None
 COLOR = color(0, 0, 0)
 
 
+def filename(name):
+    global bitmap
+    bitmap.filename = name
+
+
+def normalize(x, dimension):
+    return round( (x+1) * dimension * 0.5 )
+
+
 def gl_init():
     pass
 
@@ -63,8 +72,14 @@ def gl_clear_color(r, g, b):
 
 
 def gl_vertex(x, y):
-    real_x = round(((x + 1) * (width / 2)) + pos_x)
-    real_y = round(((y + 1) * (height / 2)) + pos_y)
+    real_x = normalize(x, width) + pos_x
+    real_y = normalize(y, height) + pos_y
+    print('Gl vertex width: ' + str(width))
+    print('Gl vertex height: ' + str(height))
+
+    print('Gl vertex pos_x: ' + str(pos_x))
+    print('Gl vertex pos_y: ' + str(pos_y))
+
     bitmap.point(real_x, real_y)
 
 
@@ -78,7 +93,7 @@ def gl_color(r, g, b):
 
 def gl_finish():
     global bitmap
-    bitmap.write('bitmap.bmp')
+    bitmap.write()
 
 
 class Render(object):
@@ -88,9 +103,10 @@ class Render(object):
         self.pixel = []
         self.color = color(255, 255, 255)
         self.clear()
+        self.filename = 'out.bmp'
 
-    def write(self, filename):
-        f = open(filename, 'bw')
+    def write(self):
+        f = open(self.filename, 'bw')
 
         f.write(char('B'))
         f.write(char('M'))
@@ -112,15 +128,17 @@ class Render(object):
 
         for i in range(self.height):
             for j in range(self.width):
-                f.write(self.framebuffer[i][j])
+                f.write(self.pixel[i][j])
 
         f.close()
 
-        def point(self, x, y):
-            self.framebuffer[x][y] = self.color
+    def point(self, x, y):
+        print('X desde point en render es : ' + str(x) + ' y el maximo es de ' + str(self.width))
+        print('Y desde point en render es : ' + str(y) + ' y el maximo es de ' + str(self.height))
+        self.pixel[x][y] = self.color
 
-        def clear():
-            self.pixel = [
-                [COLOR for x in range(self.width)]
-                for y in range(self.height)
-            ]
+    def clear(self):
+        self.pixel = [
+            [COLOR for x in range(self.width)]
+            for y in range(self.height)
+        ]
