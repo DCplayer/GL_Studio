@@ -1,6 +1,4 @@
 import struct
-from random import randint as random
-import numpy as np
 
 
 def char(c):
@@ -19,43 +17,77 @@ def color(r, g, b):
     return bytes([b, g, r])
 
 
-class GL_Studio:
+bitmap = None
+pos_x = None
+pos_y = None
+height = None
+width = None
+COLOR = color(0, 0, 0)
+
+
+def gl_init():
+    pass
+
+
+def gl_create_window(width, height):
+    global bitmap
+    bitmap = Render(width, height)
+    pass
+
+
+def gl_view_port(x, y, param_width, param_height):
+    global pos_x
+    pos_x = x
+
+    global pos_y
+    pos_y = y
+
+    global width
+    width = param_width
+
+    global height
+    height = param_height
+
+
+def gl_clear():
+    global bitmap
+    bitmap.clear()
+
+
+def gl_clear_color(r, g, b):
+    red = round(r * 255)
+    green = round(g * 255)
+    blue = round(b * 255)
+    global COLOR
+    COLOR = color(red, green, blue)
+
+
+def gl_vertex(x, y):
+    real_x = round(((x + 1) * (width / 2)) + pos_x)
+    real_y = round(((y + 1) * (height / 2)) + pos_y)
+    bitmap.point(real_x, real_y)
+
+
+def gl_color(r, g, b):
+    red = round(r*255)
+    green = round(g*255)
+    blue = round(b*255)
+    global bitmap
+    bitmap.color = color(red, green, blue)
+
+
+def gl_finish():
+    global bitmap
+    bitmap.write('bitmap.bmp')
+
+
+class Render(object):
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.pixels = np.zeros((height, width))
-        print(self.pixels)
-
-    def gl_init(self):
-        pass
-
-    def gl_create_window(self):
-        pass
-
-    def gl_view_port(self):
-        pass
-
-    def gl_clear(self):
-        pass
-
-    def gl_clear_color(self):
-        pass
-
-    def gl_vertex(self):
-        pass
-
-    def gl_color(self):
-        pass
-
-    def gl_finish(self):
-        pass
-
-
-class Bitmap(object):
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-        self.studio = GL_Studio()
+        self.pixel = []
+        self.color = color(255, 255, 255)
+        self.clear()
 
     def write(self, filename):
         f = open(filename, 'bw')
@@ -80,9 +112,15 @@ class Bitmap(object):
 
         for i in range(self.height):
             for j in range(self.width):
-                f.write(self.studio.pixels[i][j])
+                f.write(self.framebuffer[i][j])
 
         f.close()
 
-        def point(self, color, x, y):
-            self.studio.pixels[x][y] = color
+        def point(self, x, y):
+            self.framebuffer[x][y] = self.color
+
+        def clear():
+            self.pixel = [
+                [COLOR for x in range(self.width)]
+                for y in range(self.height)
+            ]
