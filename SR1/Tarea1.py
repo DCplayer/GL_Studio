@@ -2,7 +2,6 @@ from GL_Studio import *
 import random
 
 
-
 # por renderizar una imagen negra con un punto blanco en una ubicación random dentro de la imagen.
 def bullet_one():
 
@@ -20,9 +19,31 @@ def bullet_one():
     gl_vertex(realx, realy)
     gl_finish()
 
+
 # por renderizar una imagen negra con un punto blanco en cada esquina.
-def bullet_two(x):
-    pass
+def bullet_two():
+    gl_create_window(600, 800)
+    gl_clear()
+    filename('Puntos_Esquina.bmp')
+
+    gl_view_port(0, 0, 600, 800)
+    top_left_x = normalize(-1, 600)
+    top_left_y = normalize(1, 800)
+
+    top_right_x = normalize(1, 600)
+    top_right_y = normalize(1, 800)
+
+    bottom_left_x = normalize(-1, 600)
+    bottom_left_y = normalize(-1, 800)
+
+    bottom_right_x = normalize(1, 600)
+    bottom_right_y = normalize(-1, 800)
+
+    gl_vertex(top_left_x, top_left_y)
+    gl_vertex(top_right_x, top_right_y)
+    gl_vertex(bottom_left_x, bottom_left_y)
+    gl_vertex(bottom_right_x, bottom_right_y)
+    gl_finish()
 
 
 # por renderizar un cubo de 100 pixeles en el centro de su imagen.
@@ -63,4 +84,6 @@ def bullet_nine():
 
 
 bullet_one()
+# bullet_two()
+
 
