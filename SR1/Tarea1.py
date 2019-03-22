@@ -47,7 +47,37 @@ def bullet_two():
 
 
 # por renderizar un cubo de 100 pixeles en el centro de su imagen.
+def line(startx, starty,  endx, endy):
+    horizontal = False
+    vertical = False
+
+    if startx != endx:
+        horizontal = True
+    if starty != endy:
+        vertical = True
+
+    if horizontal and vertical:
+        # linea diagonal
+        gl_vertex(startx, starty)
+        while startx < endx and starty < endy:
+            startx += 1/width
+            if endy < starty:
+                starty += 1 / height
+            else:
+                starty += 1/height
+
+            gl_vertex()
+    elif horizontal and not vertical:
+        # linea horizontal
+    elif not horizontal and vertical:
+        # linea vertical
+    else:
+        print('Error: No entiendo diferencia de puntos en line()')
+
+
 def bullet_three():
+
+
     pass
 
 
