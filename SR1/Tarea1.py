@@ -27,6 +27,7 @@ def bullet_two():
     filename('Puntos_Esquina.bmp')
 
     gl_view_port(0, 0, 600, 800)
+    #Este es top right
     top_left_x = normalize(-1, 600)
     top_left_y = normalize(1, 800)
 
@@ -66,11 +67,12 @@ def line(startx, starty,  endx, endy):
             else:
                 starty += 1/height
 
-            gl_vertex()
     elif horizontal and not vertical:
         # linea horizontal
+        pass
     elif not horizontal and vertical:
         # linea vertical
+        pass
     else:
         print('Error: No entiendo diferencia de puntos en line()')
 
@@ -114,6 +116,6 @@ def bullet_nine():
 
 
 bullet_one()
-# bullet_two()
+bullet_two()
 
 

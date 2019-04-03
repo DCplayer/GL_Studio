@@ -31,16 +31,16 @@ def filename(name):
 
 
 def normalize(x, dimension):
-    return round( (x+1) * dimension * 0.5 )
+    return round((x+1) * dimension * 0.5)
 
 
 def gl_init():
     pass
 
 
-def gl_create_window(width, height):
+def gl_create_window(w, h):
     global bitmap
-    bitmap = Render(width, height)
+    bitmap = Render(w, h)
     pass
 
 
@@ -127,9 +127,10 @@ class Render(object):
         f.close()
 
     def point(self, x, y):
-        print('X desde point en render es : ' + str(x) + ' y el maximo es de ' + str(self.width))
-        print('Y desde point en render es : ' + str(y) + ' y el maximo es de ' + str(self.height))
-        self.pixel[y][x] = self.color
+        try:
+            self.pixel[y][x] = self.color
+        except IndexError:
+            self.pixel[y-1][x-1] = self.color
 
     def clear(self):
         self.pixel = [
