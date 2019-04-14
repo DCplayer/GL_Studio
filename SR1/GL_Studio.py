@@ -129,8 +129,14 @@ class Render(object):
     def point(self, x, y):
         try:
             self.pixel[y][x] = self.color
+            print("Pixel x: " + str(x) + ", y:" + str(y))
         except IndexError:
-            self.pixel[y-1][x-1] = self.color
+            if x != 0:
+                x = x-1
+            if y != 0:
+                y = y-1
+            print("Pixel x: " + str(x) + ", y:" + str(y))
+            self.pixel[y][x] = self.color
 
     def clear(self):
         self.pixel = [
