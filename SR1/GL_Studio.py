@@ -1,4 +1,5 @@
 import struct
+import numpy
 
 
 def char(c):
@@ -98,6 +99,7 @@ class Render(object):
         self.width = width
         self.height = height
         self.pixel = []
+        self.array = numpy.array(self.pixel)
         self.color = color(255, 255, 255)
         self.clear()
         self.filename = 'out.bmp'
@@ -132,12 +134,14 @@ class Render(object):
     def point(self, x, y):
         try:
             self.pixel[y][x] = self.color
+            print("X: " + str(x) + " Y: " + str(y))
         except IndexError:
-            if x != 0:
+            if x >= width:
                 x = x-1
-            if y != 0:
+            if y >= height:
                 y = y-1
             self.pixel[y][x] = self.color
+            print("X: " + str(x) + " Y: " + str(y))
 
     def clear(self):
         self.pixel = [

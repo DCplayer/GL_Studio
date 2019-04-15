@@ -43,9 +43,88 @@ def bullet_two(width, height):
     gl_vertex(top_right_x, top_right_y)
     gl_vertex(bottom_left_x, bottom_left_y)
     gl_vertex(bottom_right_x, bottom_right_y)
-    line(-1, -1, 0.8, 1, width, height)
 
     gl_finish()
+
+
+def bullet_three(width, height):
+    gl_create_window(width, width)
+    gl_clear()
+    filename('Cubo.bmp')
+
+    gl_view_port(0, 0, width-1, width-1)
+
+    #Primer Cuadrado
+    line(-0.1, 0.1, 0.1, 0.1, width, height)
+    line(0.1, 0.1, 0.1, -0.1, width, height)
+    line(0.1, -0.1, -0.1, -0.1, width, height)
+    line(-0.1, -0.1, -0.1, 0.1, width, height)
+
+    #Segundo Cuadro
+    line(-0.05, 0.15, 0.15, 0.15, width, height)
+    line(0.15, 0.15, 0.15, -0.05, width, height)
+    line(0.15, -0.05, -0.05, -0.05, width, height)
+    line(-0.05, -0.05, -0.05, 0.15, width, height)
+
+    #Conexiones
+    line(-0.1, 0.1, -0.05, 0.15, width, height)
+    line(0.1, 0.1, 0.15, 0.15, width, height)
+    line(0.1, -0.1, 0.15, -0.05, width, height)
+    line(-0.1, -0.1, -0.05, -0.05, width, height)
+    gl_finish()
+    return
+
+
+# por renderizar líneas blancas en toda la orilla de su imagen (4 lineas)
+def bullet_four(width, height):
+    gl_create_window(width, height)
+    gl_clear()
+    filename('Bordes.bmp')
+
+    gl_view_port(0, 0, width-1, width-1)
+
+    line(-1, 1, 1, 1, width, height)
+    line(1, 1, 1, -1, width, height)
+    line(1, -1, -1, -1, width, height)
+    line(-1, -1, -1, 1, width, height)
+
+    gl_finish()
+    return
+
+
+# por renderizar una línea blanca en diagonal por el centro de su imagen.
+def bullet_five(width, height):
+    gl_create_window(width, height)
+    gl_clear()
+    filename('Diagonal.bmp')
+
+    gl_view_port(0, 0, width-1, width-1)
+    line(-1, -1, 1, 1, width, height)
+    gl_finish()
+
+    return
+
+
+# por llenar su imagen entera de puntos blancos y negros (las posibilidades de que un punto sea blanco o negro son de
+# 50%)
+def bullet_six():
+    pass
+
+
+# por llenar su imagen entera de puntos de colores random
+def bullet_seven():
+    pass
+
+
+# por crear una escena de un cielo con estrellas
+def bullet_eight():
+    pass
+
+
+# por crear una escena de 80 x 96 pixeles o 160 x 192 pixeles representando un frame de un juego de Atari. Sólo pueden
+# usar los colores NTSC de
+def bullet_nine():
+    pass
 
 
 # por renderizar un cubo de 100 pixeles en el centro de su imagen.
@@ -81,7 +160,7 @@ def lineLow(x0, y0, x1, y1):
     y = y0
 
     x = x0
-    for x in range(x1):
+    for x in range(x, x1):
         gl_vertex(x, y)
         if D > 0:
             y = y + yi
@@ -101,7 +180,7 @@ def lineHigh(x0, y0, x1, y1):
     x = x0
 
     y = y0
-    for y in range(y1):
+    for y in range(y, y1):
         gl_vertex(x, y)
         if D > 0:
             x = x + xi
@@ -110,45 +189,10 @@ def lineHigh(x0, y0, x1, y1):
     return
 
 
-def bullet_three():
-
-
-    pass
-
-
-# por renderizar líneas blancas en toda la orilla de su imagen (4 lineas)
-def bullet_four():
-    pass
-
-
-# por renderizar una línea blanca en diagonal por el centro de su imagen.
-def bullet_five():
-    pass
-
-
-# por llenar su imagen entera de puntos blancos y negros (las posibilidades de que un punto sea blanco o negro son de
-# 50%)
-def bullet_six():
-    pass
-
-
-# por llenar su imagen entera de puntos de colores random
-def bullet_seven():
-    pass
-
-
-# por crear una escena de un cielo con estrellas
-def bullet_eight():
-    pass
-
-
-# por crear una escena de 80 x 96 pixeles o 160 x 192 pixeles representando un frame de un juego de Atari. Sólo pueden
-# usar los colores NTSC de
-def bullet_nine():
-    pass
-
-
-bullet_one(600,800)
-bullet_two(600,800)
-
+#bullet_one(600, 800)
+#bullet_two(600, 800)
+#bullet_three(1000, 1000)
+#bullet_four(600, 800)
+#bullet_five(600, 800)
+bullet_six(600, 800)
 
