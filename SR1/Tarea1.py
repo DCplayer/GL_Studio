@@ -4,123 +4,111 @@ import random
 
 
 # por renderizar una imagen negra con un punto blanco en una ubicación random dentro de la imagen.
-def bullet_one():
+def bullet_one(width, heigth):
 
-    gl_create_window(600, 800)
+    gl_create_window(width, heigth)
     filename('Punto_Random.bmp')
 
-    gl_view_port(0, 0, 600, 800)
+    gl_view_port(0, 0, width, heigth)
     thisy = random.uniform(-1, 1)
     thisx = random.uniform(-1, 1)
-    print(thisy)
-    print(thisx)
 
-    realx = normalize(thisx, 600)
-    realy = normalize(thisy, 800)
+    realx = normalize(thisx, width)
+    realy = normalize(thisy, heigth)
     gl_vertex(realx, realy)
     gl_finish()
 
 
 # por renderizar una imagen negra con un punto blanco en cada esquina.
-def bullet_two():
+def bullet_two(width, height):
     gl_create_window(600, 800)
     gl_clear()
     filename('Puntos_Esquina.bmp')
 
-    gl_view_port(0, 0, 599, 799)
+    gl_view_port(0, 0, width -1, height -1)
     #Este es top right
-    top_left_x = normalize(-1, 600)
-    top_left_y = normalize(1, 800)
+    top_left_x = normalize(-1, width)
+    top_left_y = normalize(1, height)
 
-    top_right_x = normalize(1, 600)
-    top_right_y = normalize(1, 800)
+    top_right_x = normalize(1, width)
+    top_right_y = normalize(1, height)
 
-    bottom_left_x = normalize(-1, 600)
-    bottom_left_y = normalize(-1, 800)
+    bottom_left_x = normalize(-1, width)
+    bottom_left_y = normalize(-1, height)
 
-    bottom_right_x = normalize(1, 600)
-    bottom_right_y = normalize(-1, 800)
+    bottom_right_x = normalize(1, width)
+    bottom_right_y = normalize(-1, height)
 
     gl_vertex(top_left_x, top_left_y)
     gl_vertex(top_right_x, top_right_y)
     gl_vertex(bottom_left_x, bottom_left_y)
     gl_vertex(bottom_right_x, bottom_right_y)
-    line(-1, -1, 1, 1)
+    line(-1, -1, 0.8, 1, width, height)
 
-    gl_finish()0
+    gl_finish()
 
 
 # por renderizar un cubo de 100 pixeles en el centro de su imagen.
 #Basandose en el pseudocodigo del algoritmo de bresenham.
-def line(startx, starty, endx, endy):
+def line(startx, starty, endx, endy, width, height):
 
-    dy = endy - starty
-    dx = endx - startx
+    startx = normalize(startx, width)
+    starty = normalize(starty, height)
+    endx = normalize(endx, width)
+    endy = normalize(endy, height)
 
-    slopey = 0
-    slopex = 0
-    if dy >= 0:
-        slopey = 1
+    if abs(endy - starty) < abs(endx - startx):
+        if startx > endx:
+            lineLow(endx, endy, startx, starty)
+        else:
+            lineLow(startx, starty, endx, endy)
     else:
+        if starty > endy:
+            lineHigh(endx, endy, startx, starty)
+        else:
+            lineHigh(startx, starty, endx, endy)
+    return
+
+
+def lineLow(x0, y0, x1, y1):
+    dx = x1 - x0
+    dy = y1 - y0
+    yi =1
+    if dy < 0:
+        yi = -1
         dy = -dy
-        slopey = -1
+    D = 2*dy - dx
+    y = y0
 
-    if dx >= 0:
-        slopex = 1
-    else:
+    x = x0
+    for x in range(x1):
+        gl_vertex(x, y)
+        if D > 0:
+            y = y + yi
+            D = D - 2*dx
+        D = D + 2*dy
+    return
+
+
+def lineHigh(x0, y0, x1, y1):
+    dx = x1 - x0
+    dy = y1 - y0
+    xi = 1
+    if dx < 0:
+        xi = -1
         dx = -dx
-        slopex = -1
+    D = 2 * dx - dy
+    x = x0
 
-    #Incrementos de las secciones
-    incrementX = 0
-    incrementY = 0
-    if dx >= dy:
-        incrementY = 0
-        incrementX = slopex
-    else:
-        incrementX = 0
-        incrementY = slopey
+    y = y0
+    for y in range(y1):
+        gl_vertex(x, y)
+        if D > 0:
+            x = x + xi
+            D = D - 2 * dy
+        D = D + 2 * dx
+    return
 
-        k = copy.copy(dx)
-        dx = copy.copy(dy)
-        dy = k
-
-    # Inicializar valores
-
-    X = startx
-    Y = starty
-    aVR = 2 * dy
-    av = aVR - dx
-    avI = av - dx
-
-    #Dibujar la linea
-    mayor = True
-    if startx > endx:
-        mayor = False
-
-    replica = endx * -1
-    if mayor:
-        while startx < endx:
-            if av >=0:
-                X = X + slopex
-                Y = Y + slopey
-                av = av + avI
-            else:
-                X = X + incrementX
-                Y = Y + incrementY
-                av = av + aVR
-            gl_vertex(X, Y)
-    else:
-        while startx < replica:
-            if av >=0:
-                X = X + slopex
-                Y = Y + slopey
-                av = av + avI
-            else:
-                X = X + incrementX
-                Y = Y + incrementY
-                av = av + aVR
-            gl_vertex(X, Y)
 
 def bullet_three():
 
@@ -160,7 +148,7 @@ def bullet_nine():
     pass
 
 
-bullet_one()
-bullet_two()
+bullet_one(600,800)
+bullet_two(600,800)
 
 

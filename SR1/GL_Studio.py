@@ -25,6 +25,9 @@ width = None
 COLOR = color(0, 0, 0)
 
 
+def getwidth():
+    return  width
+
 def filename(name):
     global bitmap
     bitmap.filename = name
@@ -129,13 +132,11 @@ class Render(object):
     def point(self, x, y):
         try:
             self.pixel[y][x] = self.color
-            print("Pixel x: " + str(x) + ", y:" + str(y))
         except IndexError:
             if x != 0:
                 x = x-1
             if y != 0:
                 y = y-1
-            print("Pixel x: " + str(x) + ", y:" + str(y))
             self.pixel[y][x] = self.color
 
     def clear(self):
