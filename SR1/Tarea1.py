@@ -183,8 +183,122 @@ def cuadrado(x, y, width, height, size):
 
 # por crear una escena de 80 x 96 pixeles o 160 x 192 pixeles representando un frame de un juego de Atari. Sólo pueden
 # usar los colores NTSC de
-def bullet_nine():
+def bullet_nine(width, height):
+    gl_create_window(width, height)
+    gl_clear()
+    filename('tempest.bmp')
+    gl_view_port(0, 0, width-1, width-1)
 
+    gl_clear_color(0, 0, 1)
+
+    #Cuadro Principal
+    line(-0.75, 0.5, 0.75, 0.5, width, height)
+    line(-0.75, 0.5, -0.75, -0.8, width, height)
+    line(-0.75, -0.8, 0.75, -0.8, width, height)
+    line(0.75, -0.8, 0.75, 0.5, width, height)
+
+    #Segnudo Cuadro
+    line(-0.125, -0.5, 0.125, -0.5, width, height)
+    line(-0.125, -0.5, -0.125, -0.3, width, height)
+    line(-0.125, -0.3, 0.125, -0.3, width, height)
+    line(0.125, -0.3, 0.125, -0.5, width, height)
+
+    #16 lineas
+    line(-0.75, 0.5, -0.125, -0.3, width, height)
+    line(-0.75, -0.8, -0.125, -0.5, width, height)
+    line(0.75, -0.8, 0.125, -0.5, width, height)
+
+    line(0, 0.5, 0, -0.3, width, height)
+    line(0.75, -0.15, 0.125, -0.4, width, height)
+    line(0, -0.5, 0, -0.8, width, height)
+    line(-0.75, -0.15, -0.125, -0.4, width, height)
+
+    line(-0.375, 0.5, -0.0625, -0.3, width, height)
+    line(0.375, 0.5, 0.0625, -0.3, width, height)
+    line(0.75, -0.475, 0.125, -0.45, width, height)
+    line(0.375, -0.8, 0.0625, -0.5, width, height)
+    line(-0.375, -0.8, -0.0625, -0.5, width, height)
+    line(-0.75, -0.475, -0.125, -0.45, width, height)
+    line(-0.75, 0.175, -0.125, -0.35, width, height)
+
+    gl_clear_color(0.898, 0.745, 0)
+    line(0.75, 0.175, 0.125, -0.35, width, height) #amarillo
+    line(0.75, 0.5, 0.125, -0.3, width, height) ##amarillo
+
+    #Numeros
+    gl_clear_color(0.1412, 0.9059, 0.0667)
+    #Unos (cuatro unos)
+    line(-0.45, 0.9, -0.45, 0.7, width, height)
+    line(0.27, 0.9, 0.27, 0.96, width, height)
+    line(0.17, 0.9, 0.17, 0.96, width, height)
+    line(0.37, 0.9, 0.37, 0.96, width, height)
+
+    #Cinco
+    line(-0.13, 0.9, -0.23, 0.9, width, height)
+    line(-0.13, 0.8, -0.23, 0.8, width, height)
+    line(-0.13, 0.7, -0.23, 0.7, width, height)
+    line(-0.13, 0.81, -0.13, 0.7, width, height)
+    line(-0.23, 0.9, -0.23, 0.8, width, height)
+
+    #Seis
+    line(-0.26, 0.7, -0.26, 0.81, width, height)
+    line(-0.36, 0.7, -0.26, 0.7, width, height)
+    line(-0.36, 0.8, -0.26, 0.8, width, height)
+    line(-0.36, 0.7, -0.36, 0.91, width, height)
+
+    #Ceros (tres ceros)
+    line(0, 0.9, 0, 0.7, width, height)
+    line(0, 0.7, -0.1, 0.7, width, height)
+    line(-0.1, 0.7, -0.1, 0.9, width, height)
+    line(0, 0.9, -0.1, 0.9, width, height)
+    x = normalize(0, width)
+    y = normalize(0.9, height)
+    gl_vertex(x, y)
+
+    line(0.2, 0.95, 0.25, 0.95, width, height)
+    line(0.25, 0.95, 0.25, 0.90, width, height)
+    line(0.25, 0.90, 0.2, 0.90, width, height)
+    line(0.2, 0.90, 0.2, 0.95, width, height)
+    x = normalize(0.25, width)
+    y = normalize(0.95, height)
+    gl_vertex(x, y)
+
+    line(0.3, 0.95, 0.35, 0.95, width, height)
+    line(0.35, 0.95, 0.35, 0.90, width, height)
+    line(0.35, 0.90, 0.3, 0.90, width, height)
+    line(0.3, 0.90, 0.3, 0.95, width, height)
+    x = normalize(0.35, width)
+    y = normalize(0.95, height)
+    gl_vertex(x, y)
+
+    #Letra E
+    line(0.5, 0.9, 0.5, 0.95, width, height)
+    line(0.5, 0.9, 0.55, 0.9, width, height)
+    line(0.5, 0.95, 0.55, 0.95, width, height)
+    line(0.5, 0.925, 0.53, 0.925, width, height)
+
+    #Letra J
+    line(0.56, 0.925, 0.58, 0.9, width, height)
+    line(0.58, 0.9, 0.6, 0.9, width, height)
+    line(0.6, 0.9, 0.6, 0.96, width, height)
+
+    #Letra D
+    line(0.62, 0.9, 0.62, 0.95, width, height)
+    line(0.62, 0.9, 0.64, 0.9, width, height)
+    line(0.62, 0.95, 0.64, 0.95, width, height)
+    line(0.64, 0.95, 0.65, 0.930, width, height)
+    line(0.64, 0.9, 0.65, 0.920, width, height)
+    line(0.65, 0.930, 0.65, 0.920, width, height)
+
+    #Nave Grande
+
+    #Nave pequeña 1
+
+    #Nave Pequeña 2
+
+
+
+    gl_finish()
     return
 
 
@@ -258,3 +372,4 @@ def lineHigh(x0, y0, x1, y1):
 #bullet_six(600, 800)
 #bullet_seven(600, 800)
 #bullet_eight(600, 800)
+bullet_nine(160, 192)
