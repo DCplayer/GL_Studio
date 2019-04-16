@@ -291,10 +291,39 @@ def bullet_nine(width, height):
     line(0.65, 0.930, 0.65, 0.920, width, height)
 
     #Nave Grande
+    gl_clear_color(1, 1, 0)
+    line(0.375, 0.5, 0.65625, 0.55, width, height)
+    line(0.65625, 0.55, 0.75, 0.5, width, height)
+    line(0.375, 0.5, 0.4875, 0.45, width, height)
+    line(0.4875, 0.45, 0.4, 0.5, width, height)
+    line(0.4, 0.5, 0.70, 0.51, width, height)
+    line(0.70, 0.51, 0.5625, 0.45, width, height)
+    line(0.5625, 0.45, 0.75, 0.5, width, height)
 
     #Nave pequeña 1
+    line(-0.5, 0.6, -0.60, 0.65, width, height)
+    line(-0.6, 0.65, -0.7, 0.6, width, height)
+    line(-0.7, 0.6, -0.64, 0.55, width, height)
+    line(-0.640, 0.55, -0.67, 0.6, width, height)
+    line(-0.69, 0.6, -0.53, 0.6, width, height)
+    line(-0.51, 0.6, -0.56, 0.55, width, height)
+    line(-0.56, 0.55, -0.5, 0.6, width, height)
 
     #Nave Pequeña 2
+    line(-0.75, 0.6, -0.85, 0.65, width, height)
+    line(-0.85, 0.65, -0.95, 0.6, width, height)
+    line(-0.95, 0.6, -0.89, 0.55, width, height)
+    line(-0.89, 0.55, -0.92, 0.6, width, height)
+    line(-0.92, 0.6, -0.80, 0.6, width, height)
+    line(-0.78, 0.6, -0.83, 0.55, width, height)
+    line(-0.83, 0.55, -0.75, 0.6, width, height)
+
+    #Lineas rojas
+    gl_clear_color(1, 0, 0)
+    line(-0.0625, -0.5, 0.0625, -0.5, width, height)
+
+
+    #Puntos aleatorios
 
 
 
