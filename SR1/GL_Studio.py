@@ -27,7 +27,8 @@ COLOR = color(0, 0, 0)
 
 
 def getwidth():
-    return  width
+    return width
+
 
 def filename(name):
     global bitmap
@@ -36,6 +37,10 @@ def filename(name):
 
 def normalize(x, dimension):
     return round((x+1) * dimension * 0.5)
+
+
+def denormalize(x, dimension):
+    return round((x/(dimension*0.5)) -1)
 
 
 def gl_init():
@@ -89,6 +94,10 @@ def gl_color(r, g, b):
     bitmap.color = color(red, green, blue)
 
 
+def get_color():
+    print(COLOR)
+
+
 def gl_finish():
     global bitmap
     bitmap.write()
@@ -133,14 +142,14 @@ class Render(object):
 
     def point(self, x, y):
         try:
-            self.pixel[y][x] = self.color
+            self.pixel[y][x] = COLOR
             print("X: " + str(x) + " Y: " + str(y))
         except IndexError:
             if x >= width:
                 x = x-1
             if y >= height:
                 y = y-1
-            self.pixel[y][x] = self.color
+            self.pixel[y][x] = COLOR
             print("X: " + str(x) + " Y: " + str(y))
 
     def clear(self):

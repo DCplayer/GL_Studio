@@ -107,24 +107,85 @@ def bullet_five(width, height):
 
 # por llenar su imagen entera de puntos blancos y negros (las posibilidades de que un punto sea blanco o negro son de
 # 50%)
-def bullet_six():
-    pass
+def bullet_six(width, height):
+    gl_create_window(width, height)
+    gl_clear()
+    filename('Random.bmp')
+
+    gl_view_port(0, 0, width-1, width-1)
+    for x in range(width):
+        for y in range(height):
+            number = random.randint(0, 1)
+            if number:
+                gl_vertex(x, y)
+    gl_finish()
+    return
 
 
 # por llenar su imagen entera de puntos de colores random
-def bullet_seven():
-    pass
+def bullet_seven(width, height):
+    gl_create_window(width, height)
+    gl_clear()
+    filename('Random_Colors.bmp')
+
+    gl_view_port(0, 0, width-1, width-1)
+    for x in range(width):
+        for y in range(height):
+            number = random.randint(0, 1)
+            if number:
+                pintura = random_color()
+                gl_clear_color(pintura[0], pintura[1], pintura[2])
+                gl_vertex(x, y)
+    gl_finish()
+    return
+
+
+def random_color():
+    return [round(random.random()), round(random.random()), round(random.random())]
 
 
 # por crear una escena de un cielo con estrellas
-def bullet_eight():
-    pass
+def bullet_eight(width, height):
+    gl_create_window(width, height)
+    gl_clear()
+    filename('stars.bmp')
+
+    gl_clear_color(1, 1, 1)
+    get_color()
+
+    gl_view_port(0, 0, width-1, width-1)
+    for x in range(width):
+        for y in range(height):
+            estrella = random.random()
+            if estrella > 0.988:
+                tamanio = random.random()
+                if tamanio < 0.33:
+                    gl_vertex(x, y)
+                elif 0.33 <= tamanio < 0.66:
+                    gl_vertex(x, y)
+
+                else:
+                    gl_vertex(x, y)
+
+    gl_finish()
+    return
+
+
+def cuadrado(x, y, width, height, size):
+    x = denormalize(x, width)
+    y = denormalize(y, height)
+    if y < 0.95:
+        for i in range(size):
+            line(x, y, x, y + 0.05, width, height)
+            x = x+0.01
+    return
 
 
 # por crear una escena de 80 x 96 pixeles o 160 x 192 pixeles representando un frame de un juego de Atari. Sólo pueden
 # usar los colores NTSC de
 def bullet_nine():
-    pass
+
+    return
 
 
 # por renderizar un cubo de 100 pixeles en el centro de su imagen.
@@ -194,5 +255,6 @@ def lineHigh(x0, y0, x1, y1):
 #bullet_three(1000, 1000)
 #bullet_four(600, 800)
 #bullet_five(600, 800)
-bullet_six(600, 800)
-
+#bullet_six(600, 800)
+#bullet_seven(600, 800)
+#bullet_eight(600, 800)
