@@ -322,14 +322,8 @@ def bullet_nine(width, height):
     gl_clear_color(1, 0, 0)
     line(-0.0625, -0.5, 0.0625, -0.5, width, height)
 
-
-    #Puntos aleatorios
-
-
-
     gl_finish()
     return
-
 
 # por renderizar un cubo de 100 pixeles en el centro de su imagen.
 #Basandose en el pseudocodigo del algoritmo de bresenham.
@@ -351,7 +345,6 @@ def line(startx, starty, endx, endy, width, height):
         else:
             lineHigh(startx, starty, endx, endy)
     return
-
 
 def lineLow(x0, y0, x1, y1):
     dx = x1 - x0
@@ -393,12 +386,12 @@ def lineHigh(x0, y0, x1, y1):
     return
 
 
-#bullet_one(600, 800)
-#bullet_two(600, 800)
-#bullet_three(1000, 1000)
-#bullet_four(600, 800)
-#bullet_five(600, 800)
-#bullet_six(600, 800)
-#bullet_seven(600, 800)
-#bullet_eight(600, 800)
+bullet_one(600, 800)
+bullet_two(600, 800)
+bullet_three(1000, 1000)
+bullet_four(600, 800)
+bullet_five(600, 800)
+bullet_six(600, 800)
+bullet_seven(600, 800)
+bullet_eight(600, 800)
 bullet_nine(160, 192)
