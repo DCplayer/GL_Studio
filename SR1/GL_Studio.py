@@ -77,7 +77,7 @@ def gl_clear_color(r, g, b):
     green = round(g * 255)
     blue = round(b * 255)
     global COLOR
-    COLOR = color(red, green, blue)
+    bitmap.bk_color = color(red, green, blue)
 
 
 def gl_vertex(x, y):
@@ -103,6 +103,10 @@ def gl_finish():
     bitmap.write()
 
 
+def gl_line(startx, starty, endx, endy):
+    bitmap.line(startx, starty, endx, endy, bitmap.width, bitmap.height)
+
+
 class Render(object):
     def __init__(self, width, height):
         self.width = width
@@ -110,6 +114,7 @@ class Render(object):
         self.pixel = []
         self.array = numpy.array(self.pixel)
         self.color = color(255, 255, 255)
+        self.bk_color = color(0, 0, 0)
         self.clear()
         self.filename = 'out.bmp'
 
@@ -142,18 +147,77 @@ class Render(object):
 
     def point(self, x, y):
         try:
-            self.pixel[y][x] = COLOR
+            self.pixel[y][x] = self.color
             print("X: " + str(x) + " Y: " + str(y))
         except IndexError:
             if x >= width:
                 x = x-1
             if y >= height:
                 y = y-1
-            self.pixel[y][x] = COLOR
+            self.pixel[y][x] = self.color
             print("X: " + str(x) + " Y: " + str(y))
 
     def clear(self):
         self.pixel = [
-            [COLOR for x in range(self.width)]
+            [self.bk_color for x in range(self.width)]
             for y in range(self.height)
         ]
+
+    def lineLow(self, x0, y0, x1, y1):
+        dx = x1 - x0
+        dy = y1 - y0
+        yi = 1
+        if dy < 0:
+            yi = -1
+            dy = -dy
+        D = 2 * dy - dx
+        y = y0
+
+        x = x0
+        for x in range(x, x1):
+            gl_vertex(x, y)
+            if D > 0:
+                y = y + yi
+                D = D - 2 * dx
+            D = D + 2 * dy
+        return
+
+    def lineHigh(self, x0, y0, x1, y1):
+        dx = x1 - x0
+        dy = y1 - y0
+        xi = 1
+        if dx < 0:
+            xi = -1
+            dx = -dx
+        D = 2 * dx - dy
+        x = x0
+
+        y = y0
+        for y in range(y, y1):
+            gl_vertex(x, y)
+            if D > 0:
+                x = x + xi
+                D = D - 2 * dy
+            D = D + 2 * dx
+        return
+
+    # por renderizar un cubo de 100 pixeles en el centro de su imagen.
+    # Basandose en el pseudocodigo del algoritmo de bresenham.
+    def line(self, startx, starty, endx, endy, width, height):
+
+        startx = normalize(startx, width)
+        starty = normalize(starty, height)
+        endx = normalize(endx, width)
+        endy = normalize(endy, height)
+
+        if abs(endy - starty) < abs(endx - startx):
+            if startx > endx:
+                self.lineLow(endx, endy, startx, starty)
+            else:
+                self.lineLow(startx, starty, endx, endy)
+        else:
+            if starty > endy:
+                self.lineHigh(endx, endy, startx, starty)
+            else:
+                self.lineHigh(startx, starty, endx, endy)
+        return

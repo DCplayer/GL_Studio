@@ -55,22 +55,22 @@ def bullet_three(width, height):
     gl_view_port(0, 0, width-1, width-1)
 
     #Primer Cuadrado
-    line(-0.1, 0.1, 0.1, 0.1, width, height)
-    line(0.1, 0.1, 0.1, -0.1, width, height)
-    line(0.1, -0.1, -0.1, -0.1, width, height)
-    line(-0.1, -0.1, -0.1, 0.1, width, height)
+    gl_line(-0.1, 0.1, 0.1, 0.1)
+    gl_line(0.1, 0.1, 0.1, -0.1)
+    gl_line(0.1, -0.1, -0.1, -0.1)
+    gl_line(-0.1, -0.1, -0.1, 0.1)
 
     #Segundo Cuadro
-    line(-0.05, 0.15, 0.15, 0.15, width, height)
-    line(0.15, 0.15, 0.15, -0.05, width, height)
-    line(0.15, -0.05, -0.05, -0.05, width, height)
-    line(-0.05, -0.05, -0.05, 0.15, width, height)
+    gl_line(-0.05, 0.15, 0.15, 0.15)
+    gl_line(0.15, 0.15, 0.15, -0.05)
+    gl_line(0.15, -0.05, -0.05, -0.05)
+    gl_line(-0.05, -0.05, -0.05, 0.15)
 
     #Conexiones
-    line(-0.1, 0.1, -0.05, 0.15, width, height)
-    line(0.1, 0.1, 0.15, 0.15, width, height)
-    line(0.1, -0.1, 0.15, -0.05, width, height)
-    line(-0.1, -0.1, -0.05, -0.05, width, height)
+    gl_line(-0.1, 0.1, -0.05, 0.15)
+    gl_line(0.1, 0.1, 0.15, 0.15)
+    gl_line(0.1, -0.1, 0.15, -0.05)
+    gl_line(-0.1, -0.1, -0.05, -0.05)
     gl_finish()
     return
 
@@ -83,10 +83,10 @@ def bullet_four(width, height):
 
     gl_view_port(0, 0, width-1, width-1)
 
-    line(-1, 1, 1, 1, width, height)
-    line(1, 1, 1, -1, width, height)
-    line(1, -1, -1, -1, width, height)
-    line(-1, -1, -1, 1, width, height)
+    gl_line(-1, 1, 1, 1)
+    gl_line(1, 1, 1, -1)
+    gl_line(1, -1, -1, -1)
+    gl_line(-1, -1, -1, 1)
 
     gl_finish()
     return
@@ -99,7 +99,7 @@ def bullet_five(width, height):
     filename('Diagonal.bmp')
 
     gl_view_port(0, 0, width-1, width-1)
-    line(-1, -1, 1, 1, width, height)
+    gl_line(-1, -1, 1, 1)
     gl_finish()
 
     return
@@ -134,7 +134,7 @@ def bullet_seven(width, height):
             number = random.randint(0, 1)
             if number:
                 pintura = random_color()
-                gl_clear_color(pintura[0], pintura[1], pintura[2])
+                gl_color(pintura[0], pintura[1], pintura[2])
                 gl_vertex(x, y)
     gl_finish()
     return
@@ -150,7 +150,7 @@ def bullet_eight(width, height):
     gl_clear()
     filename('stars.bmp')
 
-    gl_clear_color(1, 1, 1)
+    gl_color(1, 1, 1)
     get_color()
 
     gl_view_port(0, 0, width-1, width-1)
@@ -176,7 +176,7 @@ def cuadrado(x, y, width, height, size):
     y = denormalize(y, height)
     if y < 0.95:
         for i in range(size):
-            line(x, y, x, y + 0.05, width, height)
+            gl_line(x, y, x, y + 0.05)
             x = x+0.01
     return
 
@@ -189,201 +189,143 @@ def bullet_nine(width, height):
     filename('tempest.bmp')
     gl_view_port(0, 0, width-1, width-1)
 
-    gl_clear_color(0, 0, 1)
+    gl_color(0, 0, 1)
 
     #Cuadro Principal
-    line(-0.75, 0.5, 0.75, 0.5, width, height)
-    line(-0.75, 0.5, -0.75, -0.8, width, height)
-    line(-0.75, -0.8, 0.75, -0.8, width, height)
-    line(0.75, -0.8, 0.75, 0.5, width, height)
+    gl_line(-0.75, 0.5, 0.75, 0.5)
+    gl_line(-0.75, 0.5, -0.75, -0.8)
+    gl_line(-0.75, -0.8, 0.75, -0.8)
+    gl_line(0.75, -0.8, 0.75, 0.5)
 
     #Segnudo Cuadro
-    line(-0.125, -0.5, 0.125, -0.5, width, height)
-    line(-0.125, -0.5, -0.125, -0.3, width, height)
-    line(-0.125, -0.3, 0.125, -0.3, width, height)
-    line(0.125, -0.3, 0.125, -0.5, width, height)
+    gl_line(-0.125, -0.5, 0.125, -0.5)
+    gl_line(-0.125, -0.5, -0.125, -0.3)
+    gl_line(-0.125, -0.3, 0.125, -0.3)
+    gl_line(0.125, -0.3, 0.125, -0.5)
 
     #16 lineas
-    line(-0.75, 0.5, -0.125, -0.3, width, height)
-    line(-0.75, -0.8, -0.125, -0.5, width, height)
-    line(0.75, -0.8, 0.125, -0.5, width, height)
+    gl_line(-0.75, 0.5, -0.125, -0.3)
+    gl_line(-0.75, -0.8, -0.125, -0.5)
+    gl_line(0.75, -0.8, 0.125, -0.5)
 
-    line(0, 0.5, 0, -0.3, width, height)
-    line(0.75, -0.15, 0.125, -0.4, width, height)
-    line(0, -0.5, 0, -0.8, width, height)
-    line(-0.75, -0.15, -0.125, -0.4, width, height)
+    gl_line(0, 0.5, 0, -0.3)
+    gl_line(0.75, -0.15, 0.125, -0.4)
+    gl_line(0, -0.5, 0, -0.8)
+    gl_line(-0.75, -0.15, -0.125, -0.4)
 
-    line(-0.375, 0.5, -0.0625, -0.3, width, height)
-    line(0.375, 0.5, 0.0625, -0.3, width, height)
-    line(0.75, -0.475, 0.125, -0.45, width, height)
-    line(0.375, -0.8, 0.0625, -0.5, width, height)
-    line(-0.375, -0.8, -0.0625, -0.5, width, height)
-    line(-0.75, -0.475, -0.125, -0.45, width, height)
-    line(-0.75, 0.175, -0.125, -0.35, width, height)
+    gl_line(-0.375, 0.5, -0.0625, -0.3)
+    gl_line(0.375, 0.5, 0.0625, -0.3)
+    gl_line(0.75, -0.475, 0.125, -0.45)
+    gl_line(0.375, -0.8, 0.0625, -0.5)
+    gl_line(-0.375, -0.8, -0.0625, -0.5)
+    gl_line(-0.75, -0.475, -0.125, -0.45)
+    gl_line(-0.75, 0.175, -0.125, -0.35)
 
-    gl_clear_color(0.898, 0.745, 0)
-    line(0.75, 0.175, 0.125, -0.35, width, height) #amarillo
-    line(0.75, 0.5, 0.125, -0.3, width, height) ##amarillo
+    gl_color(0.898, 0.745, 0)
+    gl_line(0.75, 0.175, 0.125, -0.35) #amarillo
+    gl_line(0.75, 0.5, 0.125, -0.3) ##amarillo
 
     #Numeros
-    gl_clear_color(0.1412, 0.9059, 0.0667)
+    gl_color(0.1412, 0.9059, 0.0667)
     #Unos (cuatro unos)
-    line(-0.45, 0.9, -0.45, 0.7, width, height)
-    line(0.27, 0.9, 0.27, 0.96, width, height)
-    line(0.17, 0.9, 0.17, 0.96, width, height)
-    line(0.37, 0.9, 0.37, 0.96, width, height)
+    gl_line(-0.45, 0.9, -0.45, 0.7)
+    gl_line(0.27, 0.9, 0.27, 0.96)
+    gl_line(0.17, 0.9, 0.17, 0.96)
+    gl_line(0.37, 0.9, 0.37, 0.96)
 
     #Cinco
-    line(-0.13, 0.9, -0.23, 0.9, width, height)
-    line(-0.13, 0.8, -0.23, 0.8, width, height)
-    line(-0.13, 0.7, -0.23, 0.7, width, height)
-    line(-0.13, 0.81, -0.13, 0.7, width, height)
-    line(-0.23, 0.9, -0.23, 0.8, width, height)
+    gl_line(-0.13, 0.9, -0.23, 0.9)
+    gl_line(-0.13, 0.8, -0.23, 0.8)
+    gl_line(-0.13, 0.7, -0.23, 0.7)
+    gl_line(-0.13, 0.81, -0.13, 0.7)
+    gl_line(-0.23, 0.9, -0.23, 0.8)
 
     #Seis
-    line(-0.26, 0.7, -0.26, 0.81, width, height)
-    line(-0.36, 0.7, -0.26, 0.7, width, height)
-    line(-0.36, 0.8, -0.26, 0.8, width, height)
-    line(-0.36, 0.7, -0.36, 0.91, width, height)
+    gl_line(-0.26, 0.7, -0.26, 0.81)
+    gl_line(-0.36, 0.7, -0.26, 0.7)
+    gl_line(-0.36, 0.8, -0.26, 0.8)
+    gl_line(-0.36, 0.7, -0.36, 0.91)
 
     #Ceros (tres ceros)
-    line(0, 0.9, 0, 0.7, width, height)
-    line(0, 0.7, -0.1, 0.7, width, height)
-    line(-0.1, 0.7, -0.1, 0.9, width, height)
-    line(0, 0.9, -0.1, 0.9, width, height)
+    gl_line(0, 0.9, 0, 0.7)
+    gl_line(0, 0.7, -0.1, 0.7)
+    gl_line(-0.1, 0.7, -0.1, 0.9)
+    gl_line(0, 0.9, -0.1, 0.9)
     x = normalize(0, width)
     y = normalize(0.9, height)
     gl_vertex(x, y)
 
-    line(0.2, 0.95, 0.25, 0.95, width, height)
-    line(0.25, 0.95, 0.25, 0.90, width, height)
-    line(0.25, 0.90, 0.2, 0.90, width, height)
-    line(0.2, 0.90, 0.2, 0.95, width, height)
+    gl_line(0.2, 0.95, 0.25, 0.95)
+    gl_line(0.25, 0.95, 0.25, 0.90)
+    gl_line(0.25, 0.90, 0.2, 0.90)
+    gl_line(0.2, 0.90, 0.2, 0.95)
     x = normalize(0.25, width)
     y = normalize(0.95, height)
     gl_vertex(x, y)
 
-    line(0.3, 0.95, 0.35, 0.95, width, height)
-    line(0.35, 0.95, 0.35, 0.90, width, height)
-    line(0.35, 0.90, 0.3, 0.90, width, height)
-    line(0.3, 0.90, 0.3, 0.95, width, height)
+    gl_line(0.3, 0.95, 0.35, 0.95)
+    gl_line(0.35, 0.95, 0.35, 0.90)
+    gl_line(0.35, 0.90, 0.3, 0.90)
+    gl_line(0.3, 0.90, 0.3, 0.95)
     x = normalize(0.35, width)
     y = normalize(0.95, height)
     gl_vertex(x, y)
 
     #Letra E
-    line(0.5, 0.9, 0.5, 0.95, width, height)
-    line(0.5, 0.9, 0.55, 0.9, width, height)
-    line(0.5, 0.95, 0.55, 0.95, width, height)
-    line(0.5, 0.925, 0.53, 0.925, width, height)
+    gl_line(0.5, 0.9, 0.5, 0.95)
+    gl_line(0.5, 0.9, 0.55, 0.9)
+    gl_line(0.5, 0.95, 0.55, 0.95)
+    gl_line(0.5, 0.925, 0.53, 0.925)
 
     #Letra J
-    line(0.56, 0.925, 0.58, 0.9, width, height)
-    line(0.58, 0.9, 0.6, 0.9, width, height)
-    line(0.6, 0.9, 0.6, 0.96, width, height)
+    gl_line(0.56, 0.925, 0.58, 0.9)
+    gl_line(0.58, 0.9, 0.6, 0.9)
+    gl_line(0.6, 0.9, 0.6, 0.96)
 
     #Letra D
-    line(0.62, 0.9, 0.62, 0.95, width, height)
-    line(0.62, 0.9, 0.64, 0.9, width, height)
-    line(0.62, 0.95, 0.64, 0.95, width, height)
-    line(0.64, 0.95, 0.65, 0.930, width, height)
-    line(0.64, 0.9, 0.65, 0.920, width, height)
-    line(0.65, 0.930, 0.65, 0.920, width, height)
+    gl_line(0.62, 0.9, 0.62, 0.95)
+    gl_line(0.62, 0.9, 0.64, 0.9)
+    gl_line(0.62, 0.95, 0.64, 0.95)
+    gl_line(0.64, 0.95, 0.65, 0.930)
+    gl_line(0.64, 0.9, 0.65, 0.920)
+    gl_line(0.65, 0.930, 0.65, 0.920)
 
     #Nave Grande
-    gl_clear_color(1, 1, 0)
-    line(0.375, 0.5, 0.65625, 0.55, width, height)
-    line(0.65625, 0.55, 0.75, 0.5, width, height)
-    line(0.375, 0.5, 0.4875, 0.45, width, height)
-    line(0.4875, 0.45, 0.4, 0.5, width, height)
-    line(0.4, 0.5, 0.70, 0.51, width, height)
-    line(0.70, 0.51, 0.5625, 0.45, width, height)
-    line(0.5625, 0.45, 0.75, 0.5, width, height)
+    gl_color(1, 1, 0)
+    gl_line(0.375, 0.5, 0.65625, 0.55)
+    gl_line(0.65625, 0.55, 0.75, 0.5)
+    gl_line(0.375, 0.5, 0.4875, 0.45)
+    gl_line(0.4875, 0.45, 0.4, 0.5)
+    gl_line(0.4, 0.5, 0.70, 0.51)
+    gl_line(0.70, 0.51, 0.5625, 0.45)
+    gl_line(0.5625, 0.45, 0.75, 0.5)
 
     #Nave pequeña 1
-    line(-0.5, 0.6, -0.60, 0.65, width, height)
-    line(-0.6, 0.65, -0.7, 0.6, width, height)
-    line(-0.7, 0.6, -0.64, 0.55, width, height)
-    line(-0.640, 0.55, -0.67, 0.6, width, height)
-    line(-0.69, 0.6, -0.53, 0.6, width, height)
-    line(-0.51, 0.6, -0.56, 0.55, width, height)
-    line(-0.56, 0.55, -0.5, 0.6, width, height)
+    gl_line(-0.5, 0.6, -0.60, 0.65)
+    gl_line(-0.6, 0.65, -0.7, 0.6)
+    gl_line(-0.7, 0.6, -0.64, 0.55)
+    gl_line(-0.640, 0.55, -0.67, 0.6)
+    gl_line(-0.69, 0.6, -0.53, 0.6)
+    gl_line(-0.51, 0.6, -0.56, 0.55)
+    gl_line(-0.56, 0.55, -0.5, 0.6)
 
     #Nave Pequeña 2
-    line(-0.75, 0.6, -0.85, 0.65, width, height)
-    line(-0.85, 0.65, -0.95, 0.6, width, height)
-    line(-0.95, 0.6, -0.89, 0.55, width, height)
-    line(-0.89, 0.55, -0.92, 0.6, width, height)
-    line(-0.92, 0.6, -0.80, 0.6, width, height)
-    line(-0.78, 0.6, -0.83, 0.55, width, height)
-    line(-0.83, 0.55, -0.75, 0.6, width, height)
+    gl_line(-0.75, 0.6, -0.85, 0.65)
+    gl_line(-0.85, 0.65, -0.95, 0.6)
+    gl_line(-0.95, 0.6, -0.89, 0.55)
+    gl_line(-0.89, 0.55, -0.92, 0.6)
+    gl_line(-0.92, 0.6, -0.80, 0.6)
+    gl_line(-0.78, 0.6, -0.83, 0.55)
+    gl_line(-0.83, 0.55, -0.75, 0.6)
 
     #Lineas rojas
-    gl_clear_color(1, 0, 0)
-    line(-0.0625, -0.5, 0.0625, -0.5, width, height)
+    gl_color(1, 0, 0)
+    gl_line(-0.0625, -0.5, 0.0625, -0.5)
 
     gl_finish()
     return
 
-# por renderizar un cubo de 100 pixeles en el centro de su imagen.
-#Basandose en el pseudocodigo del algoritmo de bresenham.
-def line(startx, starty, endx, endy, width, height):
 
-    startx = normalize(startx, width)
-    starty = normalize(starty, height)
-    endx = normalize(endx, width)
-    endy = normalize(endy, height)
-
-    if abs(endy - starty) < abs(endx - startx):
-        if startx > endx:
-            lineLow(endx, endy, startx, starty)
-        else:
-            lineLow(startx, starty, endx, endy)
-    else:
-        if starty > endy:
-            lineHigh(endx, endy, startx, starty)
-        else:
-            lineHigh(startx, starty, endx, endy)
-    return
-
-def lineLow(x0, y0, x1, y1):
-    dx = x1 - x0
-    dy = y1 - y0
-    yi =1
-    if dy < 0:
-        yi = -1
-        dy = -dy
-    D = 2*dy - dx
-    y = y0
-
-    x = x0
-    for x in range(x, x1):
-        gl_vertex(x, y)
-        if D > 0:
-            y = y + yi
-            D = D - 2*dx
-        D = D + 2*dy
-    return
-
-
-def lineHigh(x0, y0, x1, y1):
-    dx = x1 - x0
-    dy = y1 - y0
-    xi = 1
-    if dx < 0:
-        xi = -1
-        dx = -dx
-    D = 2 * dx - dy
-    x = x0
-
-    y = y0
-    for y in range(y, y1):
-        gl_vertex(x, y)
-        if D > 0:
-            x = x + xi
-            D = D - 2 * dy
-        D = D + 2 * dx
-    return
 
 
 bullet_one(600, 800)
