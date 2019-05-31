@@ -20,7 +20,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="209">
               <caret line="323" column="50" lean-forward="true" selection-start-line="323" selection-start-column="50" selection-end-line="323" selection-end-column="50" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -309,7 +309,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35667396" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35667396" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39824945" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -454,7 +454,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="209">
           <caret line="323" column="50" lean-forward="true" selection-start-line="323" selection-start-column="50" selection-end-line="323" selection-end-column="50" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />

@@ -171,6 +171,18 @@ def process_input():
             if event.key == pygame.K_RIGHT:
                 camera.x -= camera_speed
                 camera.z -= camera_speed
+            if event.key == pygame.K_UP:
+                # camera.x -= camera_speed
+                camera.z -= camera_speed
+            if event.key == pygame.K_DOWN:
+                # camera.x -= camera_speed
+                camera.z += camera_speed
+            if event.key == pygame.K_w:
+                # camera.x -= camera_speed
+                camera.y -= camera_speed
+            if event.key == pygame.K_s:
+                # camera.x -= camera_speed
+                 camera.y += camera_speed
     return False
 
 
