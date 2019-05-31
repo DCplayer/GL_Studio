@@ -337,10 +337,10 @@ class Render(object):
                     self.triangle(a, b, c, texture=texture, texture_coords=(tA, tB, tC), intensity=intensity)
 
 
-gl_create_window(1500, 1500)
+gl_create_window(1000, 1000)
 gl_clear()
 filename('Skull.bmp')
-gl_view_port(0, 0, 1499, 1499)
+gl_view_port(0, 0, 999, 999)
 textura = obj.Texture('12140_Skull_v3_L2.bmp')
 
 gl_load_wf('12140_Skull_v3_L2.obj', textura , (0, 0, 0), (10, 10, 10))
