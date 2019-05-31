@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="134" column="9" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="9" />
+            <state relative-caret-position="240">
+              <caret line="323" column="50" lean-forward="true" selection-start-line="323" selection-start-column="50" selection-end-line="323" selection-end-column="50" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -30,54 +30,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.obj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="47198" column="21" selection-start-line="47198" selection-start-column="21" selection-end-line="47198" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SR4/Skull.bmp">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SR4/Skull.jpg">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.bmp">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modelos/11-obj/obj/textures/Wood_Tower_Col.bmp">
+        <entry file="file://$PROJECT_DIR$/SR4/Structure.bmp">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SR4/obj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+            <state relative-caret-position="390">
+              <caret line="77" column="101" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="101" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SR3_real/WireModel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="10" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SR3_real/Lampara.bmp">
+        <entry file="file://$PROJECT_DIR$/SR4/Skull.bmp">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
@@ -109,7 +81,12 @@
       <find>numpy.sub</find>
       <find>.y</find>
       <find>ord</find>
+      <find>zbuffer</find>
+      <find>get_</find>
+      <find>write</find>
+      <find>print(colo</find>
       <find>print</find>
+      <find>color =</find>
     </findStrings>
     <replaceStrings>
       <replace>line(</replace>
@@ -136,8 +113,8 @@
         <option value="$PROJECT_DIR$/SR3_real/WireModel.py" />
         <option value="$PROJECT_DIR$/SR4/hatka_local_.obj" />
         <option value="$PROJECT_DIR$/SR4/DeadTree.mtl" />
-        <option value="$PROJECT_DIR$/SR4/obj.py" />
         <option value="$PROJECT_DIR$/SR4/12140_Skull_v3_L2.obj" />
+        <option value="$PROJECT_DIR$/SR4/obj.py" />
         <option value="$PROJECT_DIR$/SR4/GL_Studio.py" />
       </list>
     </option>
@@ -174,7 +151,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/SR4" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -327,12 +304,12 @@
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26495728" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17948718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.55798686" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35667396" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39824945" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -436,9 +413,6 @@
     <entry file="file://$PROJECT_DIR$/SR4/v8.jpeg" />
     <entry file="file://$PROJECT_DIR$/SR4/v9.jpeg" />
     <entry file="file://$PROJECT_DIR$/SR4/vase.ma" />
-    <entry file="file://$PROJECT_DIR$/Modelos/11-obj/obj/textures/Wood_Tower_Col.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/SR3_real/WireModel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -456,31 +430,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="134" column="9" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.bmp">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/obj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Modelos/11-obj/obj/textures/Wood_Tower_Col.bmp">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SR4/Skull.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/Structure.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SR4/Skull.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.bmp">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/SR4/obj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="77" column="101" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="323" column="50" lean-forward="true" selection-start-line="323" selection-start-column="50" selection-end-line="323" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

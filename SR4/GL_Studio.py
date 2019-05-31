@@ -157,6 +157,10 @@ class Render(object):
         self.bk_color = color(0, 0, 0)
         self.clear()
         self.filename = 'out.bmp'
+        self.zbuffer = [
+            [-float('inf') for x in range(self.width)]
+            for y in range(self.height)
+        ]
 
     def write(self):
         f = open(self.filename, 'bw')
@@ -181,6 +185,7 @@ class Render(object):
 
         for i in range(self.height):
             for j in range(self.width):
+                print()
                 f.write(self.pixel[i][j])
 
         f.close()
@@ -288,15 +293,16 @@ class Render(object):
                     tx = tA[0] * w + tB[0] * v + tC[0] * u
                     ty = tA[1] * w + tB[1] * v + tC[1] * u
 
-                    color = texture.get_color(tx, ty, intensity)
+                    color = pygame.Surface.get_at()
 
-                z = A.z * w + B.z * v + C.z * u
+                z = A[2] * w + B[2] * v + C[2] * u
 
                 if x < 0 or y < 0:
                     continue
 
                 if x < len(self.zbuffer) and y < len(self.zbuffer[x]) and z > self.zbuffer[x][y]:
-                    self.point(x, y, color)
+                    self.color = color
+                    self.point(x, y)
                     self.zbuffer[x][y] = z
 
     def load(self, filename, translate=(0, 0, 0), scale=(1, 1, 1), texture=None):
@@ -339,9 +345,9 @@ class Render(object):
 
 gl_create_window(1000, 1000)
 gl_clear()
-filename('Skull.bmp')
+filename('Structure.bmp')
 gl_view_port(0, 0, 999, 999)
-textura = obj.Texture('12140_Skull_v3_L2.bmp')
+textura = obj.Texture('../Modelos/11-obj/obj/textures/Wood_Tower_Col.bmp')
 
-gl_load_wf('12140_Skull_v3_L2.obj', textura , (0, 0, 0), (10, 10, 10))
+gl_load_wf('../Modelos/11-obj/obj/wooden watch tower2.obj', textura , (0, 0, 0), (10, 10, 10))
 gl_finish()

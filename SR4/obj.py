@@ -35,7 +35,6 @@ class Obj(object):
                     prefix = ''
                 if prefix == 'v':
                     lilist = value.split(' ')
-                    print(lilist)
                     self.vertices.append(list(map(float, value.split(' '))))
                 if prefix == 'vt':
                     self.tvertices.append(list(map(float, value.split(' '))))
@@ -67,3 +66,15 @@ class Texture(object):
                 self.pixels[y].append(color(r, g, b))
 
         img.close()
+
+    def get_color(self, tx, ty, intensity=1):
+        x = int(tx * self.width)
+        y = int(ty * self.height)
+        print("GETCOLOTX: " + str(x))
+        print("GETCOLOTY: " + str(y))
+
+        # return self.pixels[y][x]
+        try:
+            return bytes(map(lambda b: round(b * intensity) if b * intensity > 0 else 0, self.pixels[y][x]))
+        except:
+            pass  # what causes this
