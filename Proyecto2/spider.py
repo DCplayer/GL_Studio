@@ -76,7 +76,7 @@ projection = glm.perspective(glm.radians(45), 800/600, 0.1, 1000.0)
 glViewport(0, 0, 800, 600)
 
 
-scene = pyassimp.load('./models/OBJ/spider.obj')
+scene = pyassimp.load('./models/OBJ/castle-tower.obj')
 
 
 def glize(node):
