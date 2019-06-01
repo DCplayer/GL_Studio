@@ -199,7 +199,7 @@ s = pygame.display.set_mode((1000, 1000), pygame.DOUBLEBUF|pygame.HWACCEL) #, py
 
 r = Render(s)
 r.load('./PenguinBaseMesh.obj')
-r.current_texture = pygame.image.load('./Skull.jpg')
+r.current_texture = pygame.image.load('./PenguinTexture.bmp')
 
 r.draw()
 
