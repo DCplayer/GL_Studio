@@ -1,6 +1,7 @@
 import struct
 import numpy
-from SR4 import obj
+import pygame
+import obj
 
 def char(c):
     return struct.pack("=c", c.encode('ascii'))
@@ -42,8 +43,10 @@ def normalize(x, dimension):
 def denormalize(x, dimension):
     return (float(x)/float(dimension*0.5)) -1
 
+
 def length(v0):
     return (v0[0]**2 + v0[1]**2 + v0[2]**2)**0.5
+
 
 def norm(v0):
     v0length = length(v0)
@@ -55,6 +58,7 @@ def norm(v0):
             v0[1] / v0length,
             v0[2] / v0length]
 
+
 def bbox(*vertices):
     xs = [ vertex[0] for vertex in vertices ]
     ys = [ vertex[1] for vertex in vertices ]
@@ -63,21 +67,20 @@ def bbox(*vertices):
 
     return [[xs[0], ys[0]], [xs[-1], ys[-1]]]
 
+
 def barycentric(A, B, C, P):
-  bary = numpy.cross(
-    [C[0] - A[0], B[0] - A[0], A[0] - P[0]],
-    [C[1] - A[1], B[1] - A[1], A[1] - P[1]]
-  )
+    bary = numpy.cross(
+        [C[0] - A[0], B[0] - A[0], A[0] - P[0]],
+        [C[1] - A[1], B[1] - A[1], A[1] - P[1]]
+    )
+    if abs(bary[2]) < 1:
+        return -1, -1, -1   # this triangle is degenerate, return anything outside
 
-  if abs(bary[2]) < 1:
-    return -1, -1, -1   # this triangle is degenerate, return anything outside
-
-  return (
-    1 - (bary[0] + bary[1]) / bary[2],
-    bary[1] / bary[2],
-    bary[0] / bary[2]
-  )
-
+    return (
+        1 - (bary[0] + bary[1]) / bary[2],
+        bary[1] / bary[2],
+        bary[0] / bary[2]
+    )
 
 
 def gl_init():
@@ -131,10 +134,6 @@ def gl_color(r, g, b):
     bitmap.color = color(red, green, blue)
 
 
-def get_color():
-    print(COLOR)
-
-
 def gl_finish():
     global bitmap
     bitmap.write()
@@ -185,25 +184,14 @@ class Render(object):
 
         for i in range(self.height):
             for j in range(self.width):
-                print()
+                if self.pixel[i][j] == None:
+                    continue
                 f.write(self.pixel[i][j])
 
         f.close()
 
     def point(self, x, y):
-        if x < 0 or y < 0:
-            return
-        print("X: "+ str(x)+ ", Y: " + str(y))
-        try:
-            self.pixel[y][x] = self.color
-            #print("X: " + str(x) + " Y: " + str(y))
-        except IndexError:
-            if x >= width:
-                x = x-1
-            if y >= height:
-                y = y-1
-            self.pixel[y][x] = self.color
-            #print("X: " + str(x) + " Y: " + str(y))
+        self.pixel[x][y] = color(255, 255, 0)
 
     def clear(self):
         self.pixel = [
@@ -273,6 +261,15 @@ class Render(object):
 
     def transform(self, vertex, translate=(0, 0, 0), scale=(1, 1, 1)):
         # returns a vertex 3, translated and transformed
+
+        print(
+            [
+                round((vertex[0] + translate[0]) * scale[0]),
+                round((vertex[1] + translate[1]) * scale[1]),
+                round((vertex[2] + translate[2]) * scale[2])
+            ]
+        )
+
         return [
             round((vertex[0] + translate[0]) * scale[0]),
             round((vertex[1] + translate[1]) * scale[1]),
@@ -281,19 +278,21 @@ class Render(object):
 
     def triangle(self, A, B, C, color=None, texture=None, texture_coords=(), intensity=1):
         bbox_min, bbox_max = bbox(A, B, C)
-
-        for x in range(bbox_min[0], bbox_max[0] + 1):
-            for y in range(bbox_min[1], bbox_max[1] + 1):
+        #surface = pygame.image.load('Skull.jpg').convert()
+        for x in range(int(bbox_min[0]), int(bbox_max[0] + 1)):
+            for y in range(int(bbox_min[1]), int(bbox_max[1] + 1)):
                 w, v, u = barycentric(A, B, C, [x, y])
                 if w < 0 or v < 0 or u < 0:  # 0 is actually a valid value! (it is on the edge)
                     continue
+                    print("Coming in")
 
-                if texture:
-                    tA, tB, tC = texture_coords
-                    tx = tA[0] * w + tB[0] * v + tC[0] * u
-                    ty = tA[1] * w + tB[1] * v + tC[1] * u
+                    if texture:
+                        tA, tB, tC = texture_coords
+                        tx = tA[0] * w + tB[0] * v + tC[0] * u
+                        ty = tA[1] * w + tB[1] * v + tC[1] * u
 
-                    color = pygame.Surface.get_at()
+                        print("TX: " + str(tx) + " TY: " + str(ty) + " intensity: " + str(intensity))
+                        color = texture.get_color(tx, ty, intensity)
 
                 z = A[2] * w + B[2] * v + C[2] * u
 
@@ -305,21 +304,23 @@ class Render(object):
                     self.point(x, y)
                     self.zbuffer[x][y] = z
 
-    def load(self, filename, translate=(0, 0, 0), scale=(1, 1, 1), texture=None):
+    def load(self, filename, translate=[0, 0, 0], scale=[1, 1, 1], texture=None):
         model = obj.Obj(filename)
         light = [0, 0, 1]
 
         for face in model.vfaces:
             vcount = len(face)
-
+            print(vcount)
             if vcount == 3:
                 f1 = face[0][0] - 1
                 f2 = face[1][0] - 1
                 f3 = face[2][0] - 1
 
-                a = self.transform(model.vertices[f1], translate, scale)
-                b = self.transform(model.vertices[f2], translate, scale)
-                c = self.transform(model.vertices[f3], translate, scale)
+                print(model.vertices[f1])
+                a = (numpy.dot(model.vertices[f1], scale[0])) + translate[0]
+                b = (numpy.dot(model.vertices[f2], scale[1])) + translate[1]
+                c = (numpy.dot(model.vertices[f3], scale[2])) + translate[2]
+                print(a, b, c)
 
                 normal = norm(numpy.cross(numpy.subtract(b, a), numpy.subtract(c, a)))
                 intensity = numpy.dot(normal, light)
@@ -328,14 +329,11 @@ class Render(object):
                     grey = round(255 * intensity)
                     if grey < 0:
                         continue
-                    self.triangle(a, b, c, color=color(grey, grey, grey))
+                    self.triangle(a, b, c, color=color(100, 100, 100))
                 else:
                     t1 = face[0][1] - 1
                     t2 = face[1][1] - 1
                     t3 = face[2][1] - 1
-                    tA = []
-                    tB = []
-                    tC = []
                     tA = model.tvertices[t1]
                     tB = model.tvertices[t2]
                     tC = model.tvertices[t3]
@@ -347,7 +345,6 @@ gl_create_window(1000, 1000)
 gl_clear()
 filename('Structure.bmp')
 gl_view_port(0, 0, 999, 999)
-textura = obj.Texture('../Modelos/11-obj/obj/textures/Wood_Tower_Col.bmp')
 
-gl_load_wf('../Modelos/11-obj/obj/wooden watch tower2.obj', textura , (0, 0, 0), (10, 10, 10))
+gl_load_wf('test.obj', None, (100, 100, 0), (100, 100, 100))
 gl_finish()

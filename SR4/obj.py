@@ -23,6 +23,7 @@ class Obj(object):
             self.lines = f.read().splitlines()
         self.vertices = []
         self.tvertices = []
+        self.normals = []
         self.vfaces = []
         self.read()
 
@@ -34,10 +35,11 @@ class Obj(object):
                 except:
                     prefix = ''
                 if prefix == 'v':
-                    lilist = value.split(' ')
                     self.vertices.append(list(map(float, value.split(' '))))
                 if prefix == 'vt':
                     self.tvertices.append(list(map(float, value.split(' '))))
+                elif prefix == 'vn':
+                    self.normals.append(list(map(float, value.split(' '))))
                 elif prefix == 'f':
                     self.vfaces.append([list(map(try_int, face.split('/'))) for face in value.split(' ')])
 
@@ -45,10 +47,14 @@ class Obj(object):
 class Texture(object):
     def __init__(self, path):
         self.path = path
+        self.width = 0
+        self.height = 0
+        self.pixels = []
         self.read()
 
     def read(self):
         img = open(self.path, "rb")
+        print("PATH: " + str(self.path))
         img.seek(2 + 4 + 4)
         header_size = struct.unpack("=l", img.read(4))[0]
         img.seek(2 + 4 + 4 + 4 + 4)

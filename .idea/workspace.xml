@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64fa074f-245f-45be-8e4f-84506fada491" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SR3_real/GL_Studio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SR3_real/WireModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SR3_real/obj.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GL_Studio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GL_Studio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SR4/GL_Studio.py" beforeDir="false" afterPath="$PROJECT_DIR$/SR4/GL_Studio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SR4/Structure.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/SR4/Structure.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SR4/obj.py" beforeDir="false" afterPath="$PROJECT_DIR$/SR4/obj.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="323" column="50" lean-forward="true" selection-start-line="323" selection-start-column="50" selection-end-line="323" selection-end-column="50" />
+            <state relative-caret-position="104">
+              <caret line="296" column="50" lean-forward="true" selection-start-line="296" selection-start-column="16" selection-end-line="296" selection-end-column="50" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -29,9 +29,25 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SR4/GL_Studio2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="207" column="11" lean-forward="true" selection-start-line="207" selection-start-column="11" selection-end-line="207" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SR4/Skull.jpg">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/SR4/test.obj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -42,15 +58,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SR4/obj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="77" column="101" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="101" />
+            <state relative-caret-position="210">
+              <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SR4/Skull.bmp">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -64,29 +75,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>normalize</find>
-      <find>gl_line(</find>
-      <find>, width, height</find>
-      <find>line(</find>
-      <find>gl_clear_color(</find>
-      <find>denormali</find>
-      <find>load</find>
-      <find>gl_line</find>
-      <find>line</find>
-      <find>point(</find>
-      <find>cross</find>
-      <find>v</find>
-      <find>dot</find>
-      <find>color</find>
-      <find>numpy.sub</find>
-      <find>.y</find>
       <find>ord</find>
-      <find>zbuffer</find>
       <find>get_</find>
       <find>write</find>
       <find>print(colo</find>
-      <find>print</find>
       <find>color =</find>
+      <find>pygame</find>
+      <find>pyg</find>
+      <find>X</find>
+      <find>barycentric</find>
+      <find>barycentri</find>
+      <find>render</find>
+      <find>baryce</find>
+      <find>sub</find>
+      <find>load</find>
+      <find>load_w</find>
+      <find>color =</find>
+      <find>for x in range</find>
+      <find>f.write</find>
+      <find>normalize</find>
+      <find>transform</find>
+      <find>color</find>
+      <find>trian</find>
+      <find>barycentr</find>
+      <find>face</find>
+      <find>z =</find>
+      <find>point</find>
+      <find>print</find>
+      <find>triangle</find>
+      <find>zbuffer</find>
+      <find>X:</find>
     </findStrings>
     <replaceStrings>
       <replace>line(</replace>
@@ -114,15 +132,20 @@
         <option value="$PROJECT_DIR$/SR4/hatka_local_.obj" />
         <option value="$PROJECT_DIR$/SR4/DeadTree.mtl" />
         <option value="$PROJECT_DIR$/SR4/12140_Skull_v3_L2.obj" />
-        <option value="$PROJECT_DIR$/SR4/obj.py" />
+        <option value="$PROJECT_DIR$/SR4/Studio.py" />
+        <option value="$PROJECT_DIR$/SR4/PenguinBaseMesh.obj" />
         <option value="$PROJECT_DIR$/SR4/GL_Studio.py" />
+        <option value="$PROJECT_DIR$/SR4/test.obj" />
+        <option value="$PROJECT_DIR$/SR4/obj.py" />
+        <option value="$PROJECT_DIR$/SR4/GL_Studio2.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="658" />
+    <option name="y" value="30" />
+    <option name="width" value="683" />
+    <option name="height" value="700" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -151,7 +174,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/SR4" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -235,7 +258,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Tarea1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Studio" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GL_Studio" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -243,11 +266,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR1/Tarea1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR4/Studio.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -280,10 +303,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.GL_Studio (1)" />
+        <item itemvalue="Python.Studio" />
         <item itemvalue="Python.WireModel" />
         <item itemvalue="Python.GL_Studio" />
         <item itemvalue="Python.Lab1" />
-        <item itemvalue="Python.Tarea1" />
       </list>
     </recent_temporary>
   </component>
@@ -300,28 +323,67 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-1" y="29" width="1368" height="702" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17948718" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19285183" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32822758" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35667396" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39824945" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32702237" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.16695353" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39759037" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32932165" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32874355" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32874355" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32874355" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24945295" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1377513" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32874355" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32874355" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39931154" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SR4/obj.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SR1/GL_Studio.py">
@@ -423,6 +485,27 @@
     <entry file="file://$PROJECT_DIR$/SR3_real/Lampara.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Modelos/11-obj/obj/textures/Wood_Tower_Col.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/Skull.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/wooden watch tower2.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136571" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/Studio.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/PenguinBaseMesh.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="26180" selection-start-line="26180" selection-end-line="26180" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.obj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -430,34 +513,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.mtl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/Skull.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modelos/11-obj/obj/textures/Wood_Tower_Col.bmp">
+    <entry file="file://$PROJECT_DIR$/SR4/Wood_Tower_Col.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/Skull.bmp">
+    <entry file="file://$PROJECT_DIR$/SR4/PenguinTexture.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SR4/Structure.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/Skull.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/obj.py">
+    <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="77" column="101" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="101" />
+        <state relative-caret-position="104">
+          <caret line="296" column="50" lean-forward="true" selection-start-line="296" selection-start-column="16" selection-end-line="296" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
+    <entry file="file://$PROJECT_DIR$/SR4/test.obj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="323" column="50" lean-forward="true" selection-start-line="323" selection-start-column="50" selection-end-line="323" selection-end-column="50" />
+        <state relative-caret-position="180">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/obj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/GL_Studio2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="207" column="11" lean-forward="true" selection-start-line="207" selection-start-column="11" selection-end-line="207" selection-end-column="11" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
