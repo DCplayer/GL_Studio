@@ -28,7 +28,7 @@ class Render(object):
 
         for face in model.vfaces:
             vcount = len(face)
-            if vcount == 3:
+            if vcount >= 3:
                 f1 = face[0][0] - 1
                 f2 = face[1][0] - 1
                 f3 = face[2][0] - 1
@@ -62,12 +62,13 @@ class Render(object):
         newvertex = []
 
         i = glm.mat4(1)
-        translate = glm.translate(i, glm.vec3(0, 0, 100))
-        rotate = glm.rotate(i, glm.radians(45), glm.vec3(0, 1, 0))
+        translate = glm.translate(i, glm.vec3(0, 300, -750))
+        rotate = glm.rotate(i, glm.radians(180), glm.vec3(1, 0, 0))
+
         scale = glm.scale(i, glm.vec3(100, 100, 100))
         model = translate * rotate * scale
-
-        view = glm.lookAt(glm.vec3(0, 0, 200), glm.vec3(0, 0, 0), glm.vec3(0, 1, 0))
+        #Donde estoy, donde apunta la camara y Que es arriba
+        view = glm.lookAt(glm.vec3(0, 0, -200), glm.vec3(0, 0, 0), glm.vec3(0, 1, 0))
 
         projection = glm.mat4(
             1, 0, 0, 0,
@@ -98,6 +99,7 @@ class Render(object):
                     transformed_vertex.z / transformed_vertex.w
                 )
             )
+            # print(newvertex)
         return newvertex
 
     def draw(self):
@@ -197,15 +199,15 @@ class Render(object):
 
 pygame.init()
 os.environ['SDL_VIDEO_CENTERED'] = '1'
-s = pygame.display.set_mode((1000, 1000), pygame.DOUBLEBUF|pygame.HWACCEL) #, pygame.FULLSCREEN)
+s = pygame.display.set_mode((1400, 1400), pygame.DOUBLEBUF|pygame.HWACCEL) #, pygame.FULLSCREEN)
 
 r = Render(s)
-r.load('./Cubo.obj')
-r.current_texture = pygame.image.load('./cueva.bmp')
+r.load('./Ogro/Ogro.obj')
+r.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
 
 r.draw()
 
 pygame.display.flip()
 
 import time
-time.sleep(15)
+time.sleep(5)

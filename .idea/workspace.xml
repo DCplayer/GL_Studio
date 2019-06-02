@@ -18,13 +18,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SR4/GL_Studio2.py">
+        <entry file="file://$PROJECT_DIR$/SR6/GL_Studio2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="152" column="29" lean-forward="true" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
+            <state relative-caret-position="422">
+              <caret line="74" column="23" lean-forward="true" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SR6/Poses.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="11" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SR3_real/obj.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -40,8 +58,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_</find>
-      <find>write</find>
       <find>print(colo</find>
       <find>color =</find>
       <find>pygame</find>
@@ -64,12 +80,14 @@
       <find>face</find>
       <find>z =</find>
       <find>point</find>
-      <find>print</find>
       <find>triangle</find>
       <find>zbuffer</find>
       <find>X:</find>
       <find>vertex =</find>
       <find>#</find>
+      <find>draw</find>
+      <find>write</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>line(</replace>
@@ -91,8 +109,6 @@
         <option value="$PROJECT_DIR$/SR1/Tarea1.py" />
         <option value="$PROJECT_DIR$/SR3/GL_Studio.py" />
         <option value="$PROJECT_DIR$/SR3/Lab1.py" />
-        <option value="$PROJECT_DIR$/SR3_real/obj.py" />
-        <option value="$PROJECT_DIR$/SR3_real/GL_Studio.py" />
         <option value="$PROJECT_DIR$/SR3_real/WireModel.py" />
         <option value="$PROJECT_DIR$/SR4/hatka_local_.obj" />
         <option value="$PROJECT_DIR$/SR4/DeadTree.mtl" />
@@ -103,8 +119,12 @@
         <option value="$PROJECT_DIR$/SR4/test.obj" />
         <option value="$PROJECT_DIR$/SR4/obj.py" />
         <option value="$PROJECT_DIR$/SR5/GL_Studio2.py" />
-        <option value="$PROJECT_DIR$/SR6/GL_Studio2.py" />
         <option value="$PROJECT_DIR$/SR4/GL_Studio2.py" />
+        <option value="$PROJECT_DIR$/SR6/OgreOBJ.obj" />
+        <option value="$PROJECT_DIR$/SR3_real/GL_Studio.py" />
+        <option value="$PROJECT_DIR$/SR3_real/obj.py" />
+        <option value="$PROJECT_DIR$/SR6/Poses.txt" />
+        <option value="$PROJECT_DIR$/SR6/GL_Studio2.py" />
       </list>
     </option>
   </component>
@@ -118,7 +138,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,17 +148,13 @@
             <path>
               <item name="GL_Studio" type="b2602c69:ProjectViewProjectNode" />
               <item name="GL_Studio" type="462c0819:PsiDirectoryNode" />
-              <item name="SR4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GL_Studio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GL_Studio" type="462c0819:PsiDirectoryNode" />
               <item name="SR6" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -167,8 +182,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GL_Studio2">
-    <configuration name="GL_Studio (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.GL_Studio2 (2)">
+    <configuration name="GL_Studio" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GL_Studio" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -176,11 +191,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR3_real" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR4/GL_Studio.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR3_real/GL_Studio.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -252,7 +267,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Studio" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="WireModel" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GL_Studio" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -260,11 +275,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR3_real" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR4/Studio.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR3_real/WireModel.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -275,11 +290,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GL_Studio2 (2)" />
+        <item itemvalue="Python.WireModel" />
+        <item itemvalue="Python.GL_Studio" />
         <item itemvalue="Python.GL_Studio2" />
         <item itemvalue="Python.GL_Studio2 (1)" />
-        <item itemvalue="Python.GL_Studio2 (2)" />
-        <item itemvalue="Python.GL_Studio (1)" />
-        <item itemvalue="Python.Studio" />
       </list>
     </recent_temporary>
   </component>
@@ -309,18 +324,18 @@
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25213677" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30128205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32603937" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16630197" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39759037" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38402626" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39715537" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32874355" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32822758" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.34135666" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34135666" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -340,34 +355,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SR1/GL_Studio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-301">
-          <caret line="106" column="32" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR1/Bordes.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR1/Random_Colors.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR1/Random.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR1/Puntos_Esquina.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR1/Punto_Random.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR1/Diagonal.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR1/Cubo.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/SR1/stars.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -395,27 +382,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR3_real/obj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SR3/Lab1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR3_real/GL_Studio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret selection-end-line="2" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -429,16 +399,6 @@
     <entry file="file://$PROJECT_DIR$/SR4/v8.jpeg" />
     <entry file="file://$PROJECT_DIR$/SR4/v9.jpeg" />
     <entry file="file://$PROJECT_DIR$/SR4/vase.ma" />
-    <entry file="file://$PROJECT_DIR$/SR3_real/WireModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SR3_real/Lampara.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modelos/11-obj/obj/textures/Wood_Tower_Col.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -448,21 +408,15 @@
     <entry file="file://$PROJECT_DIR$/SR4/wooden watch tower2.obj" />
     <entry file="file://$PROJECT_DIR$/SR4/Studio.py" />
     <entry file="file://$PROJECT_DIR$/SR4/PenguinBaseMesh.obj" />
-    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.mtl" />
     <entry file="file://$PROJECT_DIR$/SR4/Skull.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.bmp" />
     <entry file="file://$PROJECT_DIR$/SR4/Wood_Tower_Col.bmp" />
     <entry file="file://$PROJECT_DIR$/SR4/PenguinTexture.bmp" />
     <entry file="file://$PROJECT_DIR$/SR4/test.obj" />
-    <entry file="file://$PROJECT_DIR$/SR4/Structure.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/Structure.bmp" />
     <entry file="file://$PROJECT_DIR$/SR4/obj.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -470,13 +424,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.obj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-250690">
-          <caret line="47198" column="21" selection-start-line="47198" selection-start-column="21" selection-end-line="47198" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.obj" />
     <entry file="file://$PROJECT_DIR$/SR5/Cubo.mtl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -503,20 +451,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR6/GL_Studio2.py">
+    <entry file="file://$PROJECT_DIR$/SR3_real/Lampara.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/GL_Studio2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="211" selection-start-line="211" selection-end-line="211" />
+        <state relative-caret-position="275">
+          <caret line="152" column="29" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SR4/GL_Studio2.py">
+    <entry file="file://$PROJECT_DIR$/SR3_real/WireModel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="152" column="29" lean-forward="true" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
+        <state relative-caret-position="204">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/cuevas.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/OgreOBJ.mtl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/SkinColorMostro_COLOR.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7431">
+          <caret line="1740" selection-start-line="1740" selection-end-line="1740" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/OgreOBJ.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="85624" column="17" selection-start-line="85624" selection-start-column="17" selection-end-line="85624" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/Pokeball_Mb.mb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2703" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/Pokeball_Obj.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3519">
+          <caret line="48" column="2" selection-start-line="47" selection-start-column="10" selection-end-line="48" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/obj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR3_real/GL_Studio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR3_real/obj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/Poses.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="11" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/GL_Studio2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="74" column="23" lean-forward="true" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

@@ -121,8 +121,8 @@ class Render(object):
         self.clear()
         self.filename = 'out.bmp'
 
-    def write(self):
-        f = open(self.filename, 'bw')
+    def write(self, filename):
+        f = open(filename, 'bw')
 
         f.write(char('B'))
         f.write(char('M'))

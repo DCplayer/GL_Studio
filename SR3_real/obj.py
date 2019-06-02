@@ -18,3 +18,4 @@ class Obj():
             else:
                 continue
         print(self.caras)
+

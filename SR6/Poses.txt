@@ -1,0 +1,37 @@
+Dutch Angle: Tilting the camera -- Ogre
+        i = glm.mat4(1)
+        translate = glm.translate(i, glm.vec3(-100, 400, -800))
+        rotate = glm.rotate(i, glm.radians(180), glm.vec3(1, 0, 0))
+        rotate = glm.rotate(rotate, glm.radians(-15), glm.vec3(0, 0, 1))
+        rotate = glm.rotate(rotate, glm.radians(10), glm.vec3(0, 1, 0))
+
+
+Medium Shot
+        i = glm.mat4(1)
+        translate = glm.translate(i, glm.vec3(0, 300, -750))
+        rotate = glm.rotate(i, glm.radians(180), glm.vec3(1, 0, 0))
+
+
+High Angle
+        i = glm.mat4(1)
+        translate = glm.translate(i, glm.vec3(0, 300, -500))
+        rotate = glm.rotate(i, glm.radians(180), glm.vec3(1, 0, 0))
+
+        scale = glm.scale(i, glm.vec3(100, 100, 100))
+        model = translate * rotate * scale
+        #Donde estoy, donde apunta la camara y Que es arriba
+        view = glm.lookAt(glm.vec3(0, 0, -200), glm.vec3(0, 100, 0), glm.vec3(0, 1, 0))
+
+
+
+Low Angle
+        i = glm.mat4(1)
+        translate = glm.translate(i, glm.vec3(0, 300, -600))
+        rotate = glm.rotate(i, glm.radians(180), glm.vec3(1, 0, 0))
+
+        scale = glm.scale(i, glm.vec3(100, 100, 100))
+        model = translate * rotate * scale
+        #Donde estoy, donde apunta la camara y Que es arriba
+        view = glm.lookAt(glm.vec3(0, 0, -200), glm.vec3(0, -40, 0), glm.vec3(0, 1, 0))
+
+
