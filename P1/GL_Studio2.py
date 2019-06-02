@@ -109,14 +109,14 @@ class Render(object):
             # print(newvertex)
         return newvertex
 
-    def draw(self):
+    def draw(self, light):
         try:
             while True:
-                self.triangle()
+                self.triangle(light)
         except StopIteration:
             print('Done.')
 
-    def triangle(self):
+    def triangle(self, light):
         A = next(self.vertices)
         B = next(self.vertices)
         C = next(self.vertices)
@@ -164,14 +164,15 @@ class Render(object):
                             (w, v, u),
                             c,
                             (0, 0, 1),
-                            (na, nb, nc)
+                            (na, nb, nc),
+                            light
                         )
 
                         self.point(x, y, c)
                 except:
                     pass
 
-    def shader(self, trian, p, bari, c, light, normals):
+    def shader(self, trian, p, bari, c, light, normals, lettherebelight):
 
         nA, nB, nC = normals
         w, v, u =  bari
@@ -181,8 +182,9 @@ class Render(object):
         nz = nA.z * w + nB.z * v + nC.z * u
 
         normal = (nx, ny, nz)
-
-        intensity = glm.dot(normal, light)
+        intensity = 1
+        if lettherebelight:
+            intensity = glm.dot(normal, light)
 
         r = min(max(c[0] * intensity, 0), 255)
         g = min(max(c[1] * intensity, 0), 255)
@@ -209,25 +211,35 @@ pygame.init()
 os.environ['SDL_VIDEO_CENTERED'] = '1'
 s = pygame.display.set_mode((1400, 1400), pygame.DOUBLEBUF|pygame.HWACCEL) #, pygame.FULLSCREEN)
 
-ogro = Render(s)
+fondo = Render(s)
 #trans, rot, scale, whereami, lookat
-ogro.load('./Ogro/Ogro.obj', glm.vec3(-400, 300, -300), glm.vec3(180, 155, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
-ogro.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
-ogro.draw()
+fondo.load('./cueva/Cubo.obj', glm.vec3(7000, 100, 6000), glm.vec3(0, 0, 90), glm.vec3(5000, 5000, 0), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+fondo.current_texture = pygame.image.load('./cueva/cueva.bmp')
+fondo.draw(False)
 
 ogro2 = Render(s)
 #trans, rot, scale, whereami, lookat
 ogro2.load('./Ogro/Ogro.obj', glm.vec3(600, 100, 600), glm.vec3(180, -25, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
 ogro2.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
-ogro2.draw()
+ogro2.draw(True)
 
-fondo = Render(s)
+
+ogro = Render(s)
 #trans, rot, scale, whereami, lookat
-fondo.load('./cueva/Cubo.obj', glm.vec3(3000, 100, 10000), glm.vec3(0, 0, 90), glm.vec3(2000, 2000, 0), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
-fondo.current_texture = pygame.image.load('./cueva/cueva2.bmp')
-fondo.draw()
+ogro.load('./Ogro/Ogro.obj', glm.vec3(-400, 300, -300), glm.vec3(180, 155, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+ogro.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
+ogro.draw(True)
+
+
+# gato = Render(s)
+# #trans, rot, scale, whereami, lookat
+# gato.load('./Ogro/Ogro.obj', glm.vec3(-400, 300, -300), glm.vec3(180, 155, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+# gato.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
+# gato.draw(True)
+
+
 
 pygame.display.flip()
 
 import time
-time.sleep(50)
+time.sleep(20)

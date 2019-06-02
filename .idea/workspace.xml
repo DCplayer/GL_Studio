@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/P1/GL_Studio2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="190" column="16" lean-forward="true" selection-start-line="190" selection-start-column="16" selection-end-line="190" selection-end-column="16" />
+            <state relative-caret-position="458">
+              <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -146,12 +146,6 @@
               <item name="GL_Studio" type="b2602c69:ProjectViewProjectNode" />
               <item name="GL_Studio" type="462c0819:PsiDirectoryNode" />
               <item name="P1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GL_Studio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GL_Studio" type="462c0819:PsiDirectoryNode" />
-              <item name="P1" type="462c0819:PsiDirectoryNode" />
-              <item name="cueva" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -550,8 +544,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/P1/GL_Studio2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="190" column="16" lean-forward="true" selection-start-line="190" selection-start-column="16" selection-end-line="190" selection-end-column="16" />
+        <state relative-caret-position="458">
+          <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
