@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SR4/GL_Studio2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="201" column="59" selection-start-line="201" selection-start-column="59" selection-end-line="201" selection-end-column="59" />
+            <state relative-caret-position="275">
+              <caret line="152" column="29" lean-forward="true" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -40,7 +40,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ord</find>
       <find>get_</find>
       <find>write</find>
       <find>print(colo</find>
@@ -55,7 +54,6 @@
       <find>sub</find>
       <find>load</find>
       <find>load_w</find>
-      <find>color =</find>
       <find>for x in range</find>
       <find>f.write</find>
       <find>normalize</find>
@@ -70,6 +68,8 @@
       <find>triangle</find>
       <find>zbuffer</find>
       <find>X:</find>
+      <find>vertex =</find>
+      <find>#</find>
     </findStrings>
     <replaceStrings>
       <replace>line(</replace>
@@ -102,12 +102,14 @@
         <option value="$PROJECT_DIR$/SR4/GL_Studio.py" />
         <option value="$PROJECT_DIR$/SR4/test.obj" />
         <option value="$PROJECT_DIR$/SR4/obj.py" />
+        <option value="$PROJECT_DIR$/SR5/GL_Studio2.py" />
+        <option value="$PROJECT_DIR$/SR6/GL_Studio2.py" />
         <option value="$PROJECT_DIR$/SR4/GL_Studio2.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -127,7 +129,12 @@
             <path>
               <item name="GL_Studio" type="b2602c69:ProjectViewProjectNode" />
               <item name="GL_Studio" type="462c0819:PsiDirectoryNode" />
-              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+              <item name="SR4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GL_Studio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GL_Studio" type="462c0819:PsiDirectoryNode" />
+              <item name="SR6" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -137,11 +144,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SR4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SR6" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Christian12\Desktop\Noveno Semestre\Graficas\GL_Studio\SR6" />
+      <recent name="C:\Users\Christian12\Desktop\Noveno Semestre\Graficas\GL_Studio\SR5" />
       <recent name="C:\Users\Christian12\Desktop\Noveno Semestre\Graficas\GL_Studio\SR4" />
       <recent name="C:\Users\Christian12\Desktop\Noveno Semestre\Graficas\GL_Studio\SR3" />
     </key>
@@ -180,7 +189,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GL_Studio" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="GL_Studio2 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GL_Studio" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -188,11 +197,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR3_real" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR3_real/GL_Studio.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR5/GL_Studio2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GL_Studio2 (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GL_Studio" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR6" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR6/GL_Studio2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -243,34 +273,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="WireModel" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="GL_Studio" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SR3_real" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SR3_real/WireModel.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.GL_Studio2" />
+        <item itemvalue="Python.GL_Studio2 (1)" />
+        <item itemvalue="Python.GL_Studio2 (2)" />
         <item itemvalue="Python.GL_Studio (1)" />
         <item itemvalue="Python.Studio" />
-        <item itemvalue="Python.WireModel" />
-        <item itemvalue="Python.GL_Studio" />
       </list>
     </recent_temporary>
   </component>
@@ -297,45 +306,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2542735" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25213677" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32702237" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.16630197" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32603937" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16630197" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39759037" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32874355" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32874355" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.33150986" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32822758" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.34135666" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24945295" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1377513" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32874355" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32874355" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39931154" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -457,13 +448,6 @@
     <entry file="file://$PROJECT_DIR$/SR4/wooden watch tower2.obj" />
     <entry file="file://$PROJECT_DIR$/SR4/Studio.py" />
     <entry file="file://$PROJECT_DIR$/SR4/PenguinBaseMesh.obj" />
-    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.obj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="47198" column="21" selection-start-line="47198" selection-start-column="21" selection-end-line="47198" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.mtl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -476,13 +460,6 @@
     <entry file="file://$PROJECT_DIR$/SR4/Wood_Tower_Col.bmp" />
     <entry file="file://$PROJECT_DIR$/SR4/PenguinTexture.bmp" />
     <entry file="file://$PROJECT_DIR$/SR4/test.obj" />
-    <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="350" lean-forward="true" selection-start-line="350" selection-end-line="350" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SR4/Structure.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -493,10 +470,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/12140_Skull_v3_L2.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250690">
+          <caret line="47198" column="21" selection-start-line="47198" selection-start-column="21" selection-end-line="47198" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR5/Cubo.mtl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/Cubo.obj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/Cubo.mtl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR4/GL_Studio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="350" lean-forward="true" selection-start-line="350" selection-end-line="350" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR5/GL_Studio2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="893">
+          <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SR6/GL_Studio2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SR4/GL_Studio2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="201" column="59" selection-start-line="201" selection-start-column="59" selection-end-line="201" selection-end-column="59" />
+        <state relative-caret-position="275">
+          <caret line="152" column="29" lean-forward="true" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

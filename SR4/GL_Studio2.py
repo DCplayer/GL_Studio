@@ -1,5 +1,6 @@
 import glm
 import pygame
+import os
 import pywavefront
 import random
 import obj
@@ -60,42 +61,51 @@ class Render(object):
     def transform(self, vertices):
         newvertex = []
 
-        i = glm.mat4(1)
-        translate = glm.translate(i, glm.vec3(0, 0, 850))
-        rotate = glm.rotate(i, glm.radians(180), glm.vec3(1, 0, 0))
-        rotate = glm.rotate(rotate, glm.radians(180), glm.vec3(0, 1, 0))
-        scale = glm.scale(i, glm.vec3(100, 100, 100))
-        model = translate * rotate * scale
-
-        view = glm.lookAt(glm.vec3(0, 0, 200), glm.vec3(0, 0, 0), glm.vec3(0, 1, 0))
-
-        projection = glm.mat4(
-            1, 0, 0, 0,
-            0, 1, 0, 0,
-            0, 0, 1, -0.001,
-            0, 0, 0, 1
-        )
-
-
-        viewport = glm.mat4(
-            1, 0, 0, 0,
-            0, 1, 0, 0,
-            0, 0, 1, 0,
-            self.surface.get_width()/2, self.surface.get_height()/2, 128, 1
-        )
-
-
-        matrix = viewport * projection * view * model
+        # i = glm.mat4(1)
+        # translate = glm.translate(i, glm.vec3(0, 0, 100))
+        # rotate = glm.rotate(i, glm.radians(360), glm.vec3(0, 1, 0))
+        # scale = glm.scale(i, glm.vec3(100, 100, 100))
+        # model = translate * rotate * scale
+        #
+        # view = glm.lookAt(glm.vec3(0, 0, 200), glm.vec3(0, 0, 0), glm.vec3(0, 1, 0))
+        #
+        # projection = glm.mat4(
+        #     1, 0, 0, 0,
+        #     0, 1, 0, 0,
+        #     0, 0, 1, -0.001,
+        #     0, 0, 0, 1
+        # )
+        #
+        #
+        # viewport = glm.mat4(
+        #     1, 0, 0, 0,
+        #     0, 1, 0, 0,
+        #     0, 0, 1, 0,
+        #     self.surface.get_width()/2, self.surface.get_height()/2, 128, 1
+        # )
+        #
+        #
+        # matrix = viewport * projection * view * model
 
         for vertex in vertices:
             vertex = glm.vec4(*vertex, 1)
             # vertex = vertex * 100 + 400
-            transformed_vertex = matrix * vertex
+#            transformed_vertex = matrix * vertex
+            transformed_vertex = (vertex * 100) + 400
+            print(transformed_vertex)
+
+            # newvertex.append(
+            #     glm.vec3(
+            #         transformed_vertex.x / transformed_vertex.w,
+            #         transformed_vertex.y / transformed_vertex.w,
+            #         transformed_vertex.z / transformed_vertex.w
+            #     )
+            # )
             newvertex.append(
                 glm.vec3(
-                    transformed_vertex.x / transformed_vertex.w,
-                    transformed_vertex.y / transformed_vertex.w,
-                    transformed_vertex.z / transformed_vertex.w
+                    transformed_vertex.x,
+                    transformed_vertex.y,
+                    transformed_vertex.z
                 )
             )
         return newvertex
@@ -149,14 +159,15 @@ class Render(object):
                             ty = int(ty * (self.current_texture.get_height() - 1))
                             c = self.current_texture.get_at((tx, ty))
 
-                        c = self.shader(
-                            (A, B, C),
-                            (x, y),
-                            (w, v, u),
-                            c,
-                            (0, 0, 1),
-                            (na, nb, nc)
-                        )
+                        c  = (random.randint(0, 255),random.randint(0, 255), random.randint(0, 255) )
+                        # c = self.shader(
+                        #     (A, B, C),
+                        #     (x, y),
+                        #     (w, v, u),
+                        #     c,
+                        #     (0, 0, 1),
+                        #     (na, nb, nc)
+                        # )
 
                         self.point(x, y, c)
                 except:
@@ -194,12 +205,14 @@ class Render(object):
             bary[1] / bary[2],
             bary[0] / bary[2]
         )
+
 pygame.init()
+os.environ['SDL_VIDEO_CENTERED'] = '1'
 s = pygame.display.set_mode((1000, 1000), pygame.DOUBLEBUF|pygame.HWACCEL) #, pygame.FULLSCREEN)
 
 r = Render(s)
-r.load('./PenguinBaseMesh.obj')
-r.current_texture = pygame.image.load('./PenguinTexture.bmp')
+r.load('./Cubo.obj')
+r.current_texture = pygame.image.load('./cueva.bmp')
 
 r.draw()
 
