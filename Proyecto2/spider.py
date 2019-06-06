@@ -1,3 +1,5 @@
+import random
+
 import math
 import pygame
 from OpenGL.GL import *
@@ -155,75 +157,58 @@ def glize(node):
         glize(child)
 
 
-camera = glm.vec3(0, 5, 20)
-camera_speed = 0.1
-radio = camera.z
-zoom_speed = 1
+camera = glm.vec3(0, 0, 15)
+camera_speed = 1
 rotation = 0
-view_vec = glm.vec3(0, 5, 0)
-y_move = False
+radio = camera.z
+zoom = 5
+camera_z = 0
+status = 0
+mitime = 0
+def radius(x, z):
+    return numpy.sqrt((x**2 + z**2))
+
 
 def process_input():
-    global rotation, radio, continuos_ligth, y_move
-    # print('radio', radio)
-    # print(camera.z)
+    global rotation, radio, zoom, camera_z, mitime, status, shader, shader1, shader2, clearBuffer
+    radio = radius(camera.x, camera.z)
+    mitime += 1
+    if(status == 2 or status == 0):
+        glClearColor(0.18, 0.18, 0.18, 1.0)
+    else:
+        glClearColor(random.random(), 0, random.random(), 1)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             return True
         if event.type == pygame.KEYUP and event.key == pygame.K_ESCAPE:
             return True
         if event.type == pygame.KEYDOWN:
-            # z sen
-            # x cos
             if event.key == pygame.K_LEFT:
                 rotation += camera_speed
-                camera.x += math.sin(rotation) * radio
+                camera.x = math.sin(rotation) * radio
                 camera.z = math.cos(rotation) * radio
-                if camera.z > 30:
-                    camera.z = 30
-                if camera.z < 10:
-                    camera.z = 10
             if event.key == pygame.K_RIGHT:
                 rotation -= camera_speed
-                camera.x += math.sin(rotation) * radio
+                camera.x = math.sin(rotation) * radio
                 camera.z = math.cos(rotation) * radio
-                if camera.z > 30:
-                    camera.z = 30
-                if camera.z < 10:
-                    camera.z = 10
             if event.key == pygame.K_UP:
-                if camera.z >= 5: camera.z -= zoom_speed
+                if camera.z > 20:
+                    camera.z -= zoom
+                elif camera.z < -20:
+                    camera.z += zoom
             if event.key == pygame.K_DOWN:
-                if camera.z < 20: camera.z += zoom_speed
-            if event.key == pygame.K_r:
-                print('radio set')
-                if 3 < camera.z < 20:
-                    radio = camera.z
+                if 0 < camera.z <300:
+                    camera.z += zoom
+                elif 0 > camera.z > -300:
+                    camera.z -= zoom
+            if event.key == pygame.K_8:
+                if camera.y >= -300:
+                    camera.y -= zoom
+            if event.key == pygame.K_:
+                if camera.y < 300:
+                    camera.y += zoom
 
-            # for light
-            if event.key == pygame.K_l:
-                continuos_ligth = not continuos_ligth
-            if event.key == pygame.K_y:
-                y_move = not y_move
-            # move on y axis
-            if event.key == pygame.K_UP and y_move:
-                camera.y += camera_speed
-                view_vec.y += camera_speed
-                if camera.y >= 16:
-                    camera.y = 16
-            if event.key == pygame.K_DOWN and y_move:
-                camera.y -= camera_speed
-                view_vec.y -= camera_speed
-                if camera.y <= -2:
-                    camera.y = -2
-            print(camera.z)
-            if camera.z > 30:
-                camera.z = 30
-            if camera.z < 5:
-                camera.z = 5
-    # print(camera.x, camera.y,  camera.z,)
     return False
-
 
 done = False
 while not done:
