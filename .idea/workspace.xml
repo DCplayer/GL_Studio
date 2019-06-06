@@ -32,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Proyecto2/spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+            <state relative-caret-position="147">
+              <caret line="169" column="38" lean-forward="true" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -52,7 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>render</find>
       <find>baryce</find>
       <find>sub</find>
       <find>load_w</find>
@@ -82,6 +81,7 @@
       <find>load</find>
       <find>pyass</find>
       <find>texture</find>
+      <find>fo</find>
     </findStrings>
     <replaceStrings>
       <replace>line(</replace>
@@ -144,11 +144,6 @@
             <path>
               <item name="GL_Studio" type="b2602c69:ProjectViewProjectNode" />
               <item name="GL_Studio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GL_Studio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GL_Studio" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -324,12 +319,12 @@
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17735043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25106838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32603937" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38402626" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38402626" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39715537" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -355,9 +350,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SR4/Skull.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/SR4/wooden watch tower2.obj" />
     <entry file="file://$PROJECT_DIR$/SR4/Studio.py" />
     <entry file="file://$PROJECT_DIR$/SR4/PenguinBaseMesh.obj" />
@@ -572,10 +564,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto2/torre.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="3270" selection-start-line="3270" selection-end-line="3270" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto2/spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <state relative-caret-position="147">
+          <caret line="169" column="38" lean-forward="true" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
