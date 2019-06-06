@@ -45,9 +45,14 @@ class Render(object):
                 vertices.append(model.vertices[f2])
                 vertices.append(model.vertices[f3])
 
-                t_vertices.append(glm.vec2(*model.tvertices[f1t]))
-                t_vertices.append(glm.vec2(*model.tvertices[f2t]))
-                t_vertices.append(glm.vec2(*model.tvertices[f3t]))
+                try:
+                    t_vertices.append(glm.vec2(*model.tvertices[f1t]))
+                    t_vertices.append(glm.vec2(*model.tvertices[f2t]))
+                    t_vertices.append(glm.vec2(*model.tvertices[f3t]))
+                except TypeError:
+                    t_vertices.append(glm.vec3(*model.tvertices[f1t]))
+                    t_vertices.append(glm.vec3(*model.tvertices[f2t]))
+                    t_vertices.append(glm.vec3(*model.tvertices[f3t]))
 
                 n_vertices.append((glm.vec3(*model.normals[f1n])))
                 n_vertices.append((glm.vec3(*model.normals[f2n])))
@@ -158,7 +163,7 @@ class Render(object):
                             ty = int(ty * (self.current_texture.get_height() - 1))
                             c = self.current_texture.get_at((tx, ty))
 
-                        c = self.shader(
+                        color = self.shader(
                             (A, B, C),
                             (x, y),
                             (w, v, u),
@@ -168,7 +173,7 @@ class Render(object):
                             light
                         )
 
-                        self.point(x, y, c)
+                        self.point(x, y, color)
                 except:
                     pass
 
@@ -213,30 +218,50 @@ s = pygame.display.set_mode((1400, 1400), pygame.DOUBLEBUF|pygame.HWACCEL) #, py
 
 fondo = Render(s)
 #trans, rot, scale, whereami, lookat
-fondo.load('./cueva/Cubo.obj', glm.vec3(7000, 100, 6000), glm.vec3(0, 0, 90), glm.vec3(5000, 5000, 0), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+fondo.load('./cueva/Cubo.obj', glm.vec3(3500, -1000, 6000), glm.vec3(0, 0, 90), glm.vec3(4000, 4000, 4000), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
 fondo.current_texture = pygame.image.load('./cueva/cueva.bmp')
 fondo.draw(False)
 
-ogro2 = Render(s)
+# Ogro lejano
 #trans, rot, scale, whereami, lookat
-ogro2.load('./Ogro/Ogro.obj', glm.vec3(600, 100, 600), glm.vec3(180, -25, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
-ogro2.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
-ogro2.draw(True)
+fondo.load('./Ogro/Ogro.obj', glm.vec3(200, -50, 900), glm.vec3(180, -25, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+fondo.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
+fondo.draw(True)
 
 
-ogro = Render(s)
+# Ogro Cercano
 #trans, rot, scale, whereami, lookat
-ogro.load('./Ogro/Ogro.obj', glm.vec3(-400, 300, -300), glm.vec3(180, 155, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
-ogro.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
-ogro.draw(True)
+fondo.load('./Ogro/Ogro.obj', glm.vec3(-400, 300, -300), glm.vec3(180, 175, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+fondo.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
+fondo.draw(True)
 
 
-# gato = Render(s)
+# gatoReal
+#trans, rot, scale, whereami, lookat
+fondo.load('./Cat/cat.obj', glm.vec3(300, 50, 850), glm.vec3(180, 210, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+fondo.current_texture = pygame.image.load('./Cat/ColorCat.bmp')
+fondo.draw(True)
+
+
+# Perro
+#trans, rot, scale, whereami, lookat
+fondo.load('./Dog/Dog.obj', glm.vec3(-100, 200, -150), glm.vec3(180, 170, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+fondo.current_texture = pygame.image.load('./Dog/Dog.bmp')
+fondo.draw(True)
+
+
+#Deagle
+#trans, rot, scale, whereami, lookat
+fondo.load('./DesertEagle/deagle.obj', glm.vec3(-300, 200, 100), glm.vec3(180, 170, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+# fondo.current_texture = pygame.image.load('./Dog/Dog.bmp')
+fondo.draw(True)
+
+
+# #Deagle
 # #trans, rot, scale, whereami, lookat
-# gato.load('./Ogro/Ogro.obj', glm.vec3(-400, 300, -300), glm.vec3(180, 155, 0), glm.vec3(100, 100, 100), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
-# gato.current_texture = pygame.image.load('./Ogro/SkinColorMostro_COLOR.bmp')
-# gato.draw(True)
-
+# fondo.load('./DesertEagle/deagle.obj', glm.vec3(-100, 200, -3000), glm.vec3(180, 170, 0), glm.vec3(10, 10, 10), glm.vec3(0, 0, -200), glm.vec3(0, 0, 0))
+# # fondo.current_texture = pygame.image.load('./Dog/Dog.bmp')
+# fondo.draw(True)
 
 
 pygame.display.flip()

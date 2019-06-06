@@ -24,37 +24,28 @@ vertex_shader = """
 layout (location = 0) in vec4 position;
 layout (location = 1) in vec4 normal;
 layout (location = 2) in vec2 texcoords;
-
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;
-
 uniform vec4 color;
 uniform vec4 light;
-
 out vec4 vertexColor;
 out vec2 vertexTexcoords;
-
 void main()
 {
     float intensity = dot(normal, normalize(light - position));
-
     gl_Position = projection * view * model * position;
     vertexColor = color * intensity;
     vertexTexcoords = texcoords;
 }
-
 """
 
 fragment_shader = """
 #version 460
 layout (location = 0) out vec4 diffuseColor;
-
 in vec4 vertexColor;
 in vec2 vertexTexcoords;
-
 uniform sampler2D tex;
-
 void main()
 {
     diffuseColor = vertexColor * texture(tex, vertexTexcoords);
@@ -76,7 +67,7 @@ projection = glm.perspective(glm.radians(45), 800/600, 0.1, 1000.0)
 glViewport(0, 0, 800, 600)
 
 
-scene = pyassimp.load('./models/OBJ/castle-tower.obj')
+scene = pyassimp.load('./models/OBJ/spider.obj')
 
 
 def glize(node):
@@ -85,7 +76,6 @@ def glize(node):
     for mesh in node.meshes:
         material = dict(mesh.material.properties.items())
         texture = material['file'][2:]
-        print(texture)
 
         texture_surface = pygame.image.load("./models/OBJ/" + texture)
         texture_data = pygame.image.tostring(texture_surface,"RGB",1)
@@ -123,15 +113,15 @@ def glize(node):
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, faces.nbytes, faces, GL_STATIC_DRAW)
 
         glUniformMatrix4fv(
-            glGetUniformLocation(shader, "model"), 1 , GL_FALSE, 
+            glGetUniformLocation(shader, "model"), 1 , GL_FALSE,
             model
         )
         glUniformMatrix4fv(
-            glGetUniformLocation(shader, "view"), 1 , GL_FALSE, 
+            glGetUniformLocation(shader, "view"), 1 , GL_FALSE,
             glm.value_ptr(view)
         )
         glUniformMatrix4fv(
-            glGetUniformLocation(shader, "projection"), 1 , GL_FALSE, 
+            glGetUniformLocation(shader, "projection"), 1 , GL_FALSE,
             glm.value_ptr(projection)
         )
 
@@ -144,7 +134,7 @@ def glize(node):
         )
 
         glUniform4f(
-            glGetUniformLocation(shader, "light"), 
+            glGetUniformLocation(shader, "light"),
             -100, 300, 0, 1
         )
 
@@ -171,18 +161,6 @@ def process_input():
             if event.key == pygame.K_RIGHT:
                 camera.x -= camera_speed
                 camera.z -= camera_speed
-            if event.key == pygame.K_UP:
-                # camera.x -= camera_speed
-                camera.z -= camera_speed
-            if event.key == pygame.K_DOWN:
-                # camera.x -= camera_speed
-                camera.z += camera_speed
-            if event.key == pygame.K_w:
-                # camera.x -= camera_speed
-                camera.y -= camera_speed
-            if event.key == pygame.K_s:
-                # camera.x -= camera_speed
-                 camera.y += camera_speed
     return False
 
 
@@ -196,4 +174,4 @@ while not done:
 
     done = process_input()
     clock.tick(15)
-    pygame.display.flip()
+pygame.display.flip()
