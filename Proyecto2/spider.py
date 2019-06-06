@@ -1,3 +1,4 @@
+import math
 import pygame
 from OpenGL.GL import *
 import OpenGL.GL.shaders as shaders
@@ -154,22 +155,73 @@ def glize(node):
         glize(child)
 
 
-camera = glm.vec3(0, 0, 200)
-camera_speed = 50
+camera = glm.vec3(0, 5, 20)
+camera_speed = 0.1
+radio = camera.z
+zoom_speed = 1
+rotation = 0
+view_vec = glm.vec3(0, 5, 0)
+y_move = False
 
 def process_input():
+    global rotation, radio, continuos_ligth, y_move
+    # print('radio', radio)
+    # print(camera.z)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             return True
         if event.type == pygame.KEYUP and event.key == pygame.K_ESCAPE:
             return True
         if event.type == pygame.KEYDOWN:
+            # z sen
+            # x cos
             if event.key == pygame.K_LEFT:
-                camera.x += camera_speed
-                camera.z += camera_speed
+                rotation += camera_speed
+                camera.x += math.sin(rotation) * radio
+                camera.z = math.cos(rotation) * radio
+                if camera.z > 30:
+                    camera.z = 30
+                if camera.z < 10:
+                    camera.z = 10
             if event.key == pygame.K_RIGHT:
-                camera.x -= camera_speed
-                camera.z -= camera_speed
+                rotation -= camera_speed
+                camera.x += math.sin(rotation) * radio
+                camera.z = math.cos(rotation) * radio
+                if camera.z > 30:
+                    camera.z = 30
+                if camera.z < 10:
+                    camera.z = 10
+            if event.key == pygame.K_UP:
+                if camera.z >= 5: camera.z -= zoom_speed
+            if event.key == pygame.K_DOWN:
+                if camera.z < 20: camera.z += zoom_speed
+            if event.key == pygame.K_r:
+                print('radio set')
+                if 3 < camera.z < 20:
+                    radio = camera.z
+
+            # for light
+            if event.key == pygame.K_l:
+                continuos_ligth = not continuos_ligth
+            if event.key == pygame.K_y:
+                y_move = not y_move
+            # move on y axis
+            if event.key == pygame.K_UP and y_move:
+                camera.y += camera_speed
+                view_vec.y += camera_speed
+                if camera.y >= 16:
+                    camera.y = 16
+            if event.key == pygame.K_DOWN and y_move:
+                camera.y -= camera_speed
+                view_vec.y -= camera_speed
+                if camera.y <= -2:
+                    camera.y = -2
+            print(camera.z)
+            if camera.z > 30:
+                camera.z = 30
+            if camera.z < 5:
+                camera.z = 5
+    # print(camera.x, camera.y,  camera.z,)
     return False
 
 
@@ -177,7 +229,7 @@ done = False
 while not done:
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
-    view = glm.lookAt(camera, glm.vec3(0, 0, 0), glm.vec3(0, 1, 0))
+    view = glm.lookAt(camera, glm.vec3(0, 3, 0), glm.vec3(0, 1, 0))
 
     glize(scene.rootnode)
 
