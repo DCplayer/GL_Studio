@@ -141,7 +141,6 @@ class Render(object):
         self.width = width
         self.height = height
         self.pixel = []
-        self.framebuffer = []
         self.array = numpy.array(self.pixel)
         self.color = color(255, 255, 255)
         self.bk_color = color(0, 0, 0)
@@ -260,27 +259,27 @@ class Render(object):
             xfin = 0
             for x in range(xMin, xMax + 1):
 
-                if (self.framebuffer[y][x] == color(self.color[2], self.color[1], self.color[0]) and contador == 0):
+                if (self.pixel[y][x] == color(self.color[2], self.color[1], self.color[0]) and contador == 0):
                     self.point(x, y)
                     xin = x
                     x += 1
                     contador += 1
 
-                if (self.framebuffer[y][x] == color(self.color[2], self.color[1], self.color[0]) and contador == 1):
+                if (self.pixel[y][x] == color(self.color[2], self.color[1], self.color[0]) and contador == 1):
                     self.point(x, y)
                     xfin = x
                     contador += 1
 
-                # if(self.framebuffer[y][x] == color(255,255,255) and self.framebuffer[y][x+1] == color(255,255,255)):
+                # if(self.pixel[y][x] == color(255,255,255) and self.pixel[y][x+1] == color(255,255,255)):
                 #    contador =1
 
-                if (self.framebuffer[y][x] == color(self.color[2], self.color[1], self.color[0]) and self.framebuffer[y][
+                if (self.pixel[y][x] == color(self.color[2], self.color[1], self.color[0]) and self.pixel[y][
                     x - 1] == color(self.color[2], self.color[1], self.color[0]) and contador >= 1):
                     contador = 1
                     xin = x
 
                 if ((xin != xMin and xin != 0) and (xfin != xMax and xfin != 0) and contador == 2):
-                    self.glLine(xin, y, xfin, y)
+                    gl_line(xin, y, xfin, y)
 
 
     def rellenoInv(self, xMin, xMax, yMin, yMax):
@@ -292,26 +291,26 @@ class Render(object):
             xfin = 0
             for x in range(xMin, xMax + 1):
 
-                if (self.framebuffer[y][x] == color(0, 0, 0) and contador == 0):
+                if (self.pixel[y][x] == color(0, 0, 0) and contador == 0):
                     self.point(x, y)
                     xin = x
                     x += 1
                     contador += 1
 
-                if (self.framebuffer[y][x] == color(0, 0, 0) and contador == 1):
+                if (self.pixel[y][x] == color(0, 0, 0) and contador == 1):
                     self.point(x, y)
                     xfin = x
                     contador += 1
 
-                # if(self.framebuffer[y][x] == color(255,255,255) and self.framebuffer[y][x+1] == color(255,255,255)):
+                # if(self.pixel[y][x] == color(255,255,255) and self.pixel[y][x+1] == color(255,255,255)):
                 #    contador =1
 
-                # if(self.framebuffer[y][x] == color(0,0,0) and self.framebuffer[y][x-1] == color(0,0,0)):
+                # if(self.pixel[y][x] == color(0,0,0) and self.pixel[y][x-1] == color(0,0,0)):
                 #    contador =1
                 #    xin = x
 
                 if ((xin != xMin and xin != 0) and (xfin != xMax and xfin != 0) and contador == 2):
-                    self.glLine(xin, y, xfin, y)
+                    gl_line(xin, y, xfin, y)
 
     def rellenoInvTri(self, xMin, xMax, yMin, yMax):
 
@@ -322,21 +321,21 @@ class Render(object):
             xfin = 0
             for x in range(xMin, xMax + 1):
 
-                if (self.framebuffer[y][x] == color(0, 0, 0) and contador == 0):
+                if (self.pixel[y][x] == color(0, 0, 0) and contador == 0):
                     self.point(x, y)
                     xin = x
                     x += 1
                     contador += 1
 
-                if (self.framebuffer[y][x] == color(0, 0, 0) and contador == 1):
+                if (self.pixel[y][x] == color(0, 0, 0) and contador == 1):
                     self.point(x, y)
                     xfin = x
                     contador += 1
 
-                # if(self.framebuffer[y][x] == color(255,255,255) and self.framebuffer[y][x+1] == color(255,255,255)):
+                # if(self.pixel[y][x] == color(255,255,255) and self.pixel[y][x+1] == color(255,255,255)):
                 #    contador =1
 
-                if (self.framebuffer[y][x] == color(0, 0, 0) and self.framebuffer[y][x - 1] == color(0, 0, 0)):
+                if (self.pixel[y][x] == color(0, 0, 0) and self.pixel[y][x - 1] == color(0, 0, 0)):
                     contador = 1
                     xin = x
 

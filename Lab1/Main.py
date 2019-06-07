@@ -46,6 +46,8 @@ vertices = [[321, 335],
 poligono(vertices, (1, 1, 1))
 xmin, xmax= sorted([i[0] for i in vertices])[0], sorted([i[0] for i in vertices])[-1]
 ymin, ymax = sorted([i[1] for i in vertices])[0], sorted([i[1] for i in vertices])[-1]
+gl_fill(xmin, xmax, ymin, ymax, 1)
+
 
 #Poligono 3
 vertices = [[377, 249],
@@ -54,6 +56,8 @@ vertices = [[377, 249],
 poligono(vertices, (1, 1, 1))
 xmin, xmax= sorted([i[0] for i in vertices])[0], sorted([i[0] for i in vertices])[-1]
 ymin, ymax = sorted([i[1] for i in vertices])[0], sorted([i[1] for i in vertices])[-1]
+gl_fill(xmin, xmax, ymin, ymax, 1)
+
 
 #Poligono 4
 vertices = [[413, 177],
@@ -78,6 +82,7 @@ vertices = [[413, 177],
 poligono(vertices, (1, 1, 1))
 xmin, xmax= sorted([i[0] for i in vertices])[0], sorted([i[0] for i in vertices])[-1]
 ymin, ymax = sorted([i[1] for i in vertices])[0], sorted([i[1] for i in vertices])[-1]
+gl_fill(xmin, xmax, ymin, ymax, 1)
 
 #Poligono 5
 vertices = [[682, 175],
@@ -88,6 +93,7 @@ vertices = [[682, 175],
 poligono(vertices, (1, 1, 1))
 xmin, xmax= sorted([i[0] for i in vertices])[0], sorted([i[0] for i in vertices])[-1]
 ymin, ymax = sorted([i[1] for i in vertices])[0], sorted([i[1] for i in vertices])[-1]
+gl_fill(xmin, xmax, ymin, ymax, 2)
 
 
 gl_finish()
