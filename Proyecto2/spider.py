@@ -81,7 +81,6 @@ glViewport(0, 0, 800, 600)
 
 scene = pyassimp.load('./torre.obj')
 
-
 def glize(node):
     model = node.transformation.astype(numpy.float32)
 
@@ -165,9 +164,9 @@ zoom = 5
 camera_z = 0
 status = 0
 mitime = 0
+
 def radius(x, z):
     return numpy.sqrt((x**2 + z**2))
-
 
 def process_input():
     global rotation, radio, zoom, camera_z, mitime, status, shader, shader1, shader2, clearBuffer
@@ -204,7 +203,7 @@ def process_input():
             if event.key == pygame.K_8:
                 if camera.y >= -300:
                     camera.y -= zoom
-            if event.key == pygame.K_:
+            if event.key == pygame.K_2:
                 if camera.y < 300:
                     camera.y += zoom
 
